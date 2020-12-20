@@ -76,13 +76,45 @@ body {
     color: #a6a6a9;
     font-size: 14px;
   }
+  /*Section 1 elements*/
   .sec1 {
     background: url(/assets/home__bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
   }
-  .main-title{
-
-}
+  .main-title {
+    font-size: 34px;
+  }
+  /*Section 2 elements*/
+  .sub-nav {
+    display: flex;
+    list-style: none;
   
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .sub-nav a{
+      font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin: auto 20px;
+  }
+  
+  /*Footer*/
+  .footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+  }
+  .footer-nav {
+    display: flex;
+    list-style: none;
+  
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .footer-nav  a{
+      font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin: auto 20px;
+  }

@@ -1,0 +1,120 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Source Sans Pro", sans-serif;
+    background-color: #1a191f;
+    color: #fff;
+  }
+  
+  .main {
+    width: 1270px;
+    margin: 0 auto;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+  }
+  .left-header {
+    display: flex;
+    justify-content: baseline;
+    width: 50%;
+  }
+  .logo {
+    width: 100px;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: auto 15px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .nav a {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin: auto 20px;
+  }
+  .right-header {
+    display: flex;
+  }
+  .search {
+    margin: auto 0;
+    display: flex;
+    background-color: #212028;
+    color: #a6a6a9;
+    border-radius: 5px;
+  }
+  .search input {
+    font-size: 16px;
+    padding: 15px 10px;
+    outline: none;
+    border: none;
+    background: transparent;
+  }
+  .search input:focus {
+    border: 1px solid #ffd80e;
+    color: #a6a6a9;
+    border-radius: 5px;
+  }
+  
+  .search-button {
+    margin: auto 5px;
+  }
+  .language {
+    margin: auto 30px;
+    color: #a6a6a9;
+    font-size: 16px;
+  }
+  .sign-in-button {
+    outline: none;
+    padding: 0px 40px;
+    background: none;
+    border: 1px solid #ffd80e;
+    border-radius: 5px;
+    color: #a6a6a9;
+    font-size: 14px;
+  }
+  /*Section 1 elements*/
+  .sec1 {
+    background: url(/assets/home__bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+  }
+  .main-title {
+    font-size: 34px;
+  }
+  /*Section 2 elements*/
+  .sub-nav {
+    display: flex;
+    list-style: none;
+  
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .sub-nav a{
+      font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin: auto 20px;
+  }
+  
+  /*Footer*/
+  .footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+  }
+  .footer-nav {
+    display: flex;
+    list-style: none;
+  
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .footer-nav  a{
+      font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin: auto 20px;
+  }

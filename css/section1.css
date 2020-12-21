@@ -1,0 +1,60 @@
+/*Section 1 elements*/
+
+.sec1 {
+  margin-top: 10px;
+  position: relative;
+}
+
+.sec1::before {
+  background-image: url(../assets/home__bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.contant {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.main-title {
+  font-size: 34px;
+  margin-top: 50px;
+}
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 30px 20px;
+  position: relative;
+  width: 200;
+
+}
+.rate {
+  border-radius: 50px;
+  border: 1px solid;
+  font-size: 14px;
+  left: 20px;
+  outline: none;
+  padding: 7px;
+  position: absolute;
+  top: 20px;
+  font-weight: 600;
+}
+
+.movie-img {
+  width: 224px;
+  height: 332px;
+}
+.slider{
+  display: flex;
+  justify-content: space-between;
+  overflow-x: scroll;
+}

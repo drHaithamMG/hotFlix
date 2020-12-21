@@ -1,70 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotflix</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/section1.css" />
+    <link rel="stylesheet" href="css/section2.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hotflix</title>
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-</head>
-
-<body>
-  <main class="main">
-    <header class="header">
-      <div class="left-header">
-        <img src="assets/logo.svg" alt="HOTFLIX" class="logo" />
-        <ul class="nav">
-          <li class="nav-item"><a href="index.html">HOME</a></li>
-          <li class="nav-item"><a href="index.html">CATALOG</a></li>
-          <li class="nav-item"><a href="index.html">PRICING PLAN</a></li>
-          <li class="nav-item"><a href="index.html">HELP</a></li>
-          <li class="nav-item"><a href="index.html">...</a></li>
-        </ul>
-      </div>
-      <div class="right-header">
-        <div class="search">
-          <input type="search" name="movie-search" id="movie-search" placeholder="Search..." />
-          <div class="search-button">
-            <span class="icon material-icons">search</span>
-          </div>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="left-header">
+          <img src="assets/logo.svg" alt="HOTFLIX" class="logo" />
+          <ul class="nav">
+            <li class="nav-item"><a href="index.html">HOME</a></li>
+            <li class="nav-item"><a href="index.html">CATALOG</a></li>
+            <li class="nav-item"><a href="index.html">PRICING PLAN</a></li>
+            <li class="nav-item"><a href="index.html">HELP</a></li>
+            <li class="nav-item"><a href="index.html">...</a></li>
+          </ul>
         </div>
-        <span class="language">EN</span>
-        <button type="button" class="sign-in-button">SIGN IN</button>
-      </div>
-    </header>
+        <div class="right-header">
+          <div class="search">
+            <input
+              type="search"
+              name="movie-search"
+              id="movie-search"
+              placeholder="Search..."
+            />
+            <label for="movie-search" class="icon material-icons">search</label>
+          </div>
+          <span class="language">EN</span>
+          <button type="button" class="sign-in-button">SIGN IN</button>
+        </div>
+      </header>
+    </div>
+    <!-- section1 -->
     <section class="sec1">
-      <span class="main-title"><strong>NEW ITEMS</strong> OF THIS SEASON</span>
-    </section>
-    <section class="sec2">
-      <span class="sub-title">New items</span>
-      <ul class="sub-nav">
-        <li class="sub-nav-item"><a>NEW RELEASES</a></li>
-        <li class="sub-nav-item"><a>MOVIES</a></li>
-        <li class="sub-nav-item"><a>TV SERIES</a></li>
-        <li class="sub-nav-item"><a>CARTOONS</a></li>
-      </ul>
-    </section>
-    <footer class="footer">
-      <div class="left-footer">
-        <img src="assets/logo.svg" alt="HOTFLIX" class="logo" />
-        <span class="cpyright"></span>
+      <div class="container">
+        <div class="contant">
+          <span class="main-title"><strong>NEW ITEMS</strong> OF THIS SEASON</span>
+        <div class="slider"></div>
+        </div>
       </div>
-      <div class="right-footer">
-        <ul class="footer-nav">
-          <li class="footer-nav-item"><a href="#">About Us</a></li>
-          <li class="footer-nav-item"><a href="#">Contacts</a></li>
-          <li class="footer-nav-item"><a href="#">Privacy Police</a></li>
-          <li class="footer-nav-item swip-up">
-            <a href="#header">&UpArrow;</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
-  </main>
-  <script src="js/script.js"></script>
-</body>
+    </section>
 
+    <script src="js/main.js"></script>
+    <script src="js/topRated.js"></script>
+  </body>
 </html>

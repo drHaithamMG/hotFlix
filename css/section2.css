@@ -1,0 +1,15 @@
+
+  /*Section 2 elements*/
+  .sub-nav {
+    display: flex;
+    list-style: none;
+  
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .sub-nav a{
+      font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin: auto 20px;
+  }
+  

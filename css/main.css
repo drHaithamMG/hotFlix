@@ -1,14 +1,14 @@
 body {
-    padding: 0;
-    margin: 0;
-    font-family: "Source Sans Pro", sans-serif;
     background-color: #1a191f;
     color: #fff;
+    font-family: "Source Sans Pro", sans-serif;
+    margin: 0;
+    padding: 0;
   }
-  
-  .main {
-    width: 1270px;
+  .container {
     margin: 0 auto;
+    width: 1270px;
+    
   }
   .header {
     display: flex;
@@ -17,104 +17,64 @@ body {
   }
   .left-header {
     display: flex;
-    justify-content: baseline;
-    width: 50%;
+    justify-content: center;
   }
   .logo {
     width: 100px;
   }
   .nav {
+    color: rgba(255, 255, 255, 0.7);
     display: flex;
     justify-content: space-between;
     list-style: none;
     margin: auto 15px;
-    color: rgba(255, 255, 255, 0.7);
   }
   .nav a {
-    font-size: 14px;
     color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    margin: 0 20px;
     text-decoration: none;
-    margin: auto 20px;
   }
   .right-header {
     display: flex;
+    justify-content: center;
   }
   .search {
-    margin: auto 0;
-    display: flex;
     background-color: #212028;
-    color: #a6a6a9;
     border-radius: 5px;
+    color: #a6a6a9;
+    display: flex;
+    justify-content: center;
+  }
+  .search:focus-within{
+    border-radius: 5px;
+    border: 1px solid #ffd80e;
   }
   .search input {
-    font-size: 16px;
-    padding: 15px 10px;
-    outline: none;
-    border: none;
     background: transparent;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    padding: 15px 10px;
   }
   .search input:focus {
-    border: 1px solid #ffd80e;
-    color: #a6a6a9;
-    border-radius: 5px;
-  }
-  
-  .search-button {
-    margin: auto 5px;
+    padding: 14px 9px;
   }
   .language {
-    margin: auto 30px;
     color: #a6a6a9;
     font-size: 16px;
+    margin: auto 30px;
   }
   .sign-in-button {
-    outline: none;
-    padding: 0px 40px;
     background: none;
-    border: 1px solid #ffd80e;
     border-radius: 5px;
+    border: 1px solid #ffd80e;
     color: #a6a6a9;
     font-size: 14px;
+    outline: none;
+    padding: 0px 40px;
   }
-  /*Section 1 elements*/
-  .sec1 {
-    background: url(/assets/home__bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 600px;
+  .icon{
+    margin: auto 10px;
   }
-  .main-title {
-    font-size: 34px;
-  }
-  /*Section 2 elements*/
-  .sub-nav {
-    display: flex;
-    list-style: none;
-  
-    color: rgba(255, 255, 255, 0.7);
-  }
-  .sub-nav a{
-      font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    margin: auto 20px;
-  }
-  
-  /*Footer*/
-  .footer{
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 0;
-  }
-  .footer-nav {
-    display: flex;
-    list-style: none;
-  
-    color: rgba(255, 255, 255, 0.7);
-  }
-  .footer-nav  a{
-      font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    margin: auto 20px;
-  }
+ 

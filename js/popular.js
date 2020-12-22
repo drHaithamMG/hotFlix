@@ -1,5 +1,6 @@
 const popularMovies = [];
-
+let currentPage;
+let totalPages;
 function popular() {
     fetchPopularData();
 }
@@ -9,6 +10,9 @@ function fetchPopularData() {
         .then(data => parsePopularData(data));
 }
 function parsePopularData(data) {
+    totalPages=data.total_pages;
+    currentPage=data.page;
+    console.log(totalPages,currentPage);
     data.results.map(movie => {
         popularMovies.push(movie);
     });
@@ -46,3 +50,4 @@ function showError(error) {
 function checkVote(averageVote){
     return (averageVote>7)?'rate-high':'rate-low';
 }
+

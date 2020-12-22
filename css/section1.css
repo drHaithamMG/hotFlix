@@ -46,16 +46,18 @@
   cursor: pointer;
 }
 .movie-card {
-  position: relative;
   display: flex;
   flex-direction: column;
+  outline: none;
+  padding: 10px 0;
+  position: relative;
 }
 .movie-name{
+  overflow: hidden;
+  padding: 15px 0;
+  text-overflow: ellipsis;
   white-space: nowrap;
   width: 224px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 15px 0;
 }
 .rate {
   background-color: #291a1a;
@@ -74,6 +76,15 @@
 }
 .rate-low {
   border: 1px solid red;
+}
+
+.movie-img::before{
+  content: 'welcome';
+  height: 332px;
+  object-fit: cover;
+  opacity: 0.1;
+  position: absolute;
+  width: 224px;
 }
 .movie-img {
   height: 332px;

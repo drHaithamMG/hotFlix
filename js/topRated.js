@@ -35,7 +35,7 @@ function drawTopRated() {
     let html = ``;
     const imgurl = 'https://image.tmdb.org/t/p/original/';
     topRatedMovies.forEach(movie => {
-        const classVote=checkVote(movie.vote_average);
+        const classVote = checkVote(movie.vote_average);
         html = `  <div class="movie-card">
         <img src="${imgurl + movie.backdrop_path}" alt="${movie.title}" title="${movie.title}" class="movie-img">
         <span class="rate ${classVote}">${convertToFloat(movie.vote_average)}</span>
@@ -48,7 +48,8 @@ function drawTopRated() {
         infinite: false,
         arrows: false,
         slidesToScroll: 1,
-        slidesToShow: 5
+        slidesToShow: 5,
+
     });
 }
 /**
@@ -64,9 +65,9 @@ function showError(error) {
  * @param {number}average_vote
  * @returns {string} class name
  */
-function checkVote(averageVote){
-    return (averageVote>7)?'rate-high':'rate-low';
+function checkVote(averageVote) {
+    return (averageVote > 7) ? 'rate-high' : 'rate-low';
 }
-function convertToFloat(number){
-    return Number.isInteger(number) ? (number+ ".0") : (number.toString());
- }
+function convertToFloat(number) {
+    return Number.isInteger(number) ? (number + ".0") : (number.toString());
+}

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/section2.css" />
     <link rel="stylesheet" href="css/footer.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="slider files/slick-1.8.1/slick/slick.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
       rel="stylesheet"
@@ -51,13 +52,53 @@
     <section class="sec1">
       <div class="container">
         <div class="contant">
-          <span class="main-title"><strong>NEW ITEMS</strong> OF THIS SEASON</span>
-        <div class="slider"></div>
+          <div class="holder">
+            <span class="main-title"
+              ><strong>TOP RATED MOVIES</strong> ALL THE TIME</span
+            >
+            <div class="buttons">
+              <button class="left-button-slider">&leftarrow;</button>
+              <button class="right-button-slider">&rightarrow;</button>
+            </div>
+          </div>
+          <div class="slider"></div>
         </div>
       </div>
     </section>
-
+    <!-- End section 1 -->
+    <section class="sec2-nav">
+      <div class="container">
+        <div class="container-items">
+          <span class="sub-title">New Items</span>
+          <ul class="sub-nav">
+            <li class = "active-nav"><a>NEW RELEASES</a></li>
+            <li class="not-active-nav"><a>MOVIES</a></li>
+            <li class="not-active-nav"><a>TV SERIES</a></li>
+            <li class="not-active-nav"><a>CARTOONS</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="sec2">
+      <div class="container">
+        <div class="contant-warpper"></div>
+      </div>
+    </section>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="slider files/slick-1.8.1/slick/slick.min.js"
+    ></script>
     <script src="js/main.js"></script>
     <script src="js/topRated.js"></script>
+    <script src="js/listeners.js"></script>
+    <script src="js/popular.js"></script>
   </body>
 </html>

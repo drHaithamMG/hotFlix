@@ -1,4 +1,8 @@
+/**Importing js scrupts
+ */
 'topRated.js'
+'listeners.js'
+'popular.js'
 document.addEventListener("DOMContentLoaded", () => {
     /*DOMContentLoaded*/
     main();
@@ -10,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
  */
 function main() {
     topRated();
+    popular();
 }
 
 

@@ -1,10 +1,8 @@
 /*Section 1 elements*/
-
 .sec1 {
   margin-top: 10px;
   position: relative;
 }
-
 .sec1::before {
   background-image: url(../assets/home__bg.jpg);
   background-repeat: no-repeat;
@@ -18,7 +16,6 @@
   width: 100%;
   z-index: -1;
 }
-
 .contant {
   display: flex;
   flex-direction: column;
@@ -28,33 +25,66 @@
   font-size: 34px;
   margin-top: 50px;
 }
+.holder {
+  display: flex;
+  justify-content: space-between;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.buttons button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 40px;
+  outline: none;
+}
+.buttons button:hover {
+  color: #ffd80e;
+  cursor: pointer;
+}
 .movie-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin: 30px 20px;
-  position: relative;
-  width: 200;
-
+}
+.movie-name{
+  white-space: nowrap;
+  width: 224px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 15px 0;
 }
 .rate {
+  background-color: #291a1a;
   border-radius: 50px;
   border: 1px solid;
   font-size: 14px;
+  font-weight: 600;
   left: 20px;
   outline: none;
   padding: 7px;
   position: absolute;
   top: 20px;
-  font-weight: 600;
 }
-
+.rate-high {
+  border: 1px solid green;
+}
+.rate-low {
+  border: 1px solid red;
+}
 .movie-img {
-  width: 224px;
   height: 332px;
+  object-fit: cover;
+  width: 224px;
 }
-.slider{
-  display: flex;
-  justify-content: space-between;
-  overflow-x: scroll;
+.slider {
+  margin: 20px 0 40px 0;
+}
+.date {
+  color: #ffd80e;
+  font-size: small;
+  padding: 0;
 }

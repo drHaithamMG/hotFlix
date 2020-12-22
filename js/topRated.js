@@ -2,10 +2,9 @@
  * main function to build top rated movies
  * @param {void}  
  */
-const topRatedMovies=[];
-function topRated(){
+const topRatedMovies = [];
+function topRated() {
     fetchData();
-    console.log(topRatedMovies);
 }
 /**FetchData function
  * Fetch Related Movies from themoviedb.org
@@ -13,10 +12,9 @@ function topRated(){
  * @returns {void}
  */
 function fetchData() {
-    console.log('fetch data running');
     fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=72d1f40a92f130a0e4229203411f9b12&language=en-US&page=1')
-    .then(response =>(response.status==200)?response.json():showError(response.status))
-    .then(data => parseData(data));
+        .then(response => (response.status == 200) ? response.json() : showError(response.status))
+        .then(data => parseData(data));
 }
 /**
  * Parse data to meaningful structure 
@@ -24,32 +22,51 @@ function fetchData() {
  * @returns {void}
  */
 function parseData(data) {
-    data.results.map(movie=>topRatedMovies.push(movie));
+    data.results.map(movie => topRatedMovies.push(movie));
     drawTopRated();
-
-    console.log('parse data running');
 }
-function drawTopRated(){
-    console.log('draw top rated running');
-    console.log(topRatedMovies);
-    const container=document.querySelector('.slider');
-    let html=``;
-    const imgurl='https://image.tmdb.org/t/p/original/';
-    topRatedMovies.forEach(movie=>{
-        console.log('im here');
-        console.log('movie',movie);
-        html=`  <div class="movie-card">
-        <img src="${imgurl+movie.backdrop_path}" alt="movie.title" class="movie-img">
-        <span class="rate">${movie.vote_average}</span>
-        <span class="movie-name">${movie.title}</span>
+/**
+ * Draw the movie card on the html page
+ * @param {void}void
+ * @returns {void}
+ */
+function drawTopRated() {
+    const container = document.querySelector('.slider');
+    let html = ``;
+    const imgurl = 'https://image.tmdb.org/t/p/original/';
+    topRatedMovies.forEach(movie => {
+        const classVote=checkVote(movie.vote_average);
+        html = `  <div class="movie-card">
+        <img src="${imgurl + movie.backdrop_path}" alt="${movie.title}" title="${movie.title}" class="movie-img">
+        <span class="rate ${classVote}">${convertToFloat(movie.vote_average)}</span>
+        <span class="movie-name">${movie.title}</span><br/>
         <span class="date">${movie.release_date}</span>
       </div>`
-        container.innerHTML+=html;
-        console.log(html);
+        container.innerHTML += html;
     })
+    $(container).slick({
+        infinite: false,
+        arrows: false,
+        slidesToScroll: 1,
+        slidesToShow: 5
+    });
 }
-function showError(error){
-    if(error==401){
+/**
+ * Handle errors from fetching data
+ * @param {number} errortype 
+ */
+function showError(error) {
+    if (error == 401) {
         console.log('URL is not found');
     }
 }
+/** Check the vote value 
+ * @param {number}average_vote
+ * @returns {string} class name
+ */
+function checkVote(averageVote){
+    return (averageVote>7)?'rate-high':'rate-low';
+}
+function convertToFloat(number){
+    return Number.isInteger(number) ? (number+ ".0") : (number.toString());
+ }

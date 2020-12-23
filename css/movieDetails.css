@@ -1,28 +1,49 @@
 .movie-img-warpper {
-  width: 100%;
   margin: 0 auto;
   padding: 0;
   position: relative;
+  width: 100%;
 }
 .movie-img-elements {
   display: flex;
   justify-content: center;
+  position: relative;
+}
+.movie-img-elements::after{
+  content: '+';
+  position: absolute;
+  bottom: -40px;
+  right: 66px;
+  font-size: 50px;
+  border-radius: 500px;
+  background-color: #ffd80e;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+.movie-details:before{
+  content: 'play';
+  position: absolute;
+  top: 44px;
+  right: 407px;
+  font-size: 20px;
 }
 .movie-img-warpper img {
   width: 75%;
 }
 .movie-details {
-  width: 100%;
+  position: relative;
   margin: 0 auto;
   padding: 0;
+  width: 100%;
 }
 .movie-elements-details {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
 }
 .movie-title {
+  position: relative;
   font-size: 60px;
   margin: 15px 0;
 }
@@ -35,13 +56,32 @@
 .movie-release-year,
 .movie-status,
 .movie-languages {
-  padding: 10px;
-  border: 1px solid #ffd80e;
   border-radius: 12px;
+  border: 1px solid #ffd80e;
   margin-right: 10px;
+  padding: 10px;
 }
-.movie-overview{
-  margin: 10px 0;
-  text-align: justify;
-  font-size: 20px;
+.movie-overview {
+  border-bottom: 5px double #ffd80e;
+  border-top: 5px double #ffd80e;
+  font-size: 24px;
+  margin: 30px 0;
+  padding: 15px;
+  text-align: center;
+}
+.movie-stars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px 0;
+}
+.actor-span {
+  border-radius: 12px;
+  border: 1px solid #ffd80e;
+  font-size: 14px;
+  margin: 5px;
+  padding: 10px;
+}
+.title-main-actors {
+  font-size: 24px;
 }

@@ -6,7 +6,7 @@ window.addEventListener('load', (event) => {
 });
 //Global variables
 let similerMovies = [];
-
+let movieStars = [];
 
 /**
  * Get movie ID from the url
@@ -37,7 +37,7 @@ function fetchMovieDetails(movieID) {
  * @param {number} error 
  */
 function showError(error) {
-    if (error == 401||error==400) {
+    if (error == 401 || error == 400) {
         console.log('URL is not found');
     }
 }
@@ -107,8 +107,30 @@ function drawMovieDetails(data) {
     });
     movieDetails = `
     <span class="movie-overview">${overView}</span>
+    <span class = "title-main-actors">Movie main actors</span>
     <div class="movie-stars"></div>`
     movieElementDetails.innerHTML += movieDetails;
+    getStars(data.id);
+
+}
+/**
+ * Fetch stars of the movie
+ * @param {number} moive_id 
+ * @returns {void}
+ */
+function getStars(id) {
+    fetch(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=72d1f40a92f130a0e4229203411f9b12&language=en-US`)
+        .then(response => (response.status == 200) ? response.json() : showError(response.status))
+        .then(data => {
+            if (data.cast.length > 0) {
+                data.cast.map(actor => movieStars.push(actor));
+                const actors = document.querySelector('.movie-stars');
+                movieStars.forEach(actor => {
+                    console.log(actor.name);
+                    actors.innerHTML += `<span class='actor-span'>${actor.name}</span>`
+                })
+            }
+        });
 }
 /**
  * Get similer movie's data
@@ -159,7 +181,7 @@ function parseSimilerData(data) {
 
         });
     }
-   
+
 }
 
 /** Check the vote value 

@@ -1,0 +1,28 @@
+.movie-img-warpper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+}
+.movie-img-elements {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 40px 0;
+}
+.movie-img-warpper img {
+  width: 75%;
+}
+.movie-details {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+.movie-elements-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.movie-title {
+  font-size: 40px;
+}

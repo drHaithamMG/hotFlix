@@ -58,6 +58,12 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 224px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+.movie-name:hover{
+  color: #ffd80e;
+  outline: none;
 }
 .rate {
   background-color: #291a1a;

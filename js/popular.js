@@ -25,11 +25,9 @@ const fetchIData = async () => {
 }
 function parsePopularData(data) {
     totalPages = data.total_pages;
-    console.log(totalPages, currentPage);
     data.results.map(movie => {
         popularMovies.push(movie);
     });
-    console.log(popularMovies);
     drawPopular();
 }
 function drawPopular() {
@@ -38,12 +36,11 @@ function drawPopular() {
     const imgurl = 'https://image.tmdb.org/t/p/original/';
     popularMovies.forEach(movie => {
         const classVote = checkVote(movie.vote_average);
-        console.log(movie, movie.backdrop_path);
-        const imagePath = imgurl + movie.backdrop_path;
+        const imagePath = imgurl + movie.poster_path;
         html = `<div class="movie-card">
         <img src="${imagePath}" alt="${movie.title}" title="${movie.title}" class="movie-img">
         <span class="rate ${classVote}">${convertToFloat(movie.vote_average)}</span>
-        <span class="movie-name">${movie.title}</span>
+        <a class="movie-name" href="/pages/movie.html?id=${movie.id}">${movie.title}</a>
         <span class="date">${movie.release_date}</span>
       </div>`
         container.innerHTML += html;

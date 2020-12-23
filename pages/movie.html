@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hotflix</title>
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/section1.css" />
-    <link rel="stylesheet" href="css/section2.css" />
-    <link rel="stylesheet" href="css/footer.css" />
+    <title>Hotflix-Search</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/section1.css" />
+    <link rel="stylesheet" href="../css/movieDetails.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="stylesheet" href="slider files/slick-1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="../slider files/slick-1.8.1/slick/slick.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"
       rel="stylesheet"
@@ -20,17 +21,17 @@
     />
   </head>
 
-  <body>
+  <body id="body">
     <div class="container" id="header">
       <header class="header">
         <div class="left-header">
-          <img src="assets/logo.svg" alt="HOTFLIX" class="logo" />
+          <img src="../assets/logo.svg" alt="HOTFLIX" class="logo" />
           <ul class="nav">
-            <li class="nav-item"><a href="index.html">HOME</a></li>
-            <li class="nav-item"><a href="index.html">CATALOG</a></li>
-            <li class="nav-item"><a href="index.html">PRICING PLAN</a></li>
-            <li class="nav-item"><a href="index.html">HELP</a></li>
-            <li class="nav-item"><a href="index.html">...</a></li>
+            <li class="nav-item"><a href="../index.html">HOME</a></li>
+            <li class="nav-item"><a href="#">CATALOG</a></li>
+            <li class="nav-item"><a href="#">PRICING PLAN</a></li>
+            <li class="nav-item"><a href="#">HELP</a></li>
+            <li class="nav-item"><a href="#">...</a></li>
           </ul>
         </div>
         <div class="right-header">
@@ -48,14 +49,24 @@
         </div>
       </header>
     </div>
+    <section class="movie-img-warpper">
+      <div class="container">
+        <div class="movie-img-elements"></div>
+      </div>
+    </section>
+    <section class="movie-details">
+      <div class="container">
+        <div class="movie-elements-details">
+          
+        </div>
+      </div>
+    </section>
     <!-- section1 -->
     <section class="sec1">
       <div class="container">
         <div class="contant">
           <div class="holder">
-            <span class="main-title"
-              ><strong>TOP RATED MOVIES</strong> ALL THE TIME</span
-            >
+            <span class="main-title">More to watch</span>
             <div class="buttons">
               <button class="left-button-slider" title="Previous">
                 &leftarrow;
@@ -70,29 +81,12 @@
       </div>
     </section>
     <!-- End section 1 -->
-    <section class="sec2-nav">
-      <div class="container">
-        <div class="container-items">
-          <span class="sub-title">New Items</span>
-          <ul class="sub-nav">
-            <li class="active-nav"><a>NEW RELEASES</a></li>
-            <li class="not-active-nav"><a>MOVIES</a></li>
-            <li class="not-active-nav"><a>TV SERIES</a></li>
-            <li class="not-active-nav"><a>CARTOONS</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="sec2">
-      <div class="container">
-        <div class="contant-warpper"></div>
-      </div>
-    </section>
+
     <footer class="footer">
       <div class="container">
         <div class="warpper-footer">
           <div class="left-section-footer">
-            <img src="assets/logo.svg" alt="HOTFLIX" class="logo" />
+            <img src="../assets/logo.svg" alt="HOTFLIX" class="logo" />
             <div class="spans">
               <span>&copy;2020 HotFlix</span>
               <span>Create by Dmitry Volkov</span>
@@ -121,11 +115,8 @@
     ></script>
     <script
       type="text/javascript"
-      src="slider files/slick-1.8.1/slick/slick.min.js"
+      src="../slider files/slick-1.8.1/slick/slick.min.js"
     ></script>
-    <script src="js/main.js"></script>
-    <script src="js/topRated.js"></script>
-    <script src="js/listeners.js"></script>
-    <script src="js/popular.js"></script>
+    <script src="../js/movieDetails.js"></script>
   </body>
 </html>

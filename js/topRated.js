@@ -37,9 +37,9 @@ function drawTopRated() {
     topRatedMovies.forEach(movie => {
         const classVote = checkVote(movie.vote_average);
         html = `  <div class="movie-card">
-        <img src="${imgurl + movie.backdrop_path}" alt="${movie.title}" title="${movie.title}" class="movie-img">
+        <img src="${imgurl + movie.poster_path}" alt="${movie.title}" title="${movie.title}" class="movie-img">
         <span class="rate ${classVote}">${convertToFloat(movie.vote_average)}</span>
-        <span class="movie-name">${movie.title}</span><br/>
+        <a class="movie-name" href="/pages/movie.html?id=${movie.id}">${movie.title}</a><br/>
         <span class="date">${movie.release_date}</span>
       </div>`
         container.innerHTML += html;

@@ -7,6 +7,9 @@
     display: flex;
     justify-content: center;
   }
+  .left-header a{
+    align-self: center;
+  }
   .logo {
     width: 100px;
   }
@@ -36,6 +39,8 @@
     color: #a6a6a9;
     display: flex;
     justify-content: center;
+    border: 1px solid #212028;
+
   }
   .search:focus-within {
     border-radius: 5px;
@@ -44,20 +49,20 @@
   .search input {
     background: transparent;
     border: none;
+    color: #a6a6a9;
+    font-size: 16px;
     font-size: 16px;
     outline: none;
     padding: 15px 10px;
-    color: #a6a6a9;
-    font-size: 16px;
   }
   .search input:focus {
-    padding: 14px 9px;
+    padding: 15px 10px;
   }
   .language {
     color: #a6a6a9;
+    cursor: pointer;
     font-size: 16px;
     margin: auto 30px;
-    cursor: pointer;
   }
   .language:hover{
     color: #ffd80e;
@@ -72,6 +77,12 @@
     outline: none;
     padding: 0px 40px;
   }
+  .sign-in-button:hover {
+    background: #ffd80e;
+    border: 1px solid #212028;
+    color: #212028;
+    cursor: pointer;
+  }
   .icon {
     margin: 10px;
   }
@@ -81,6 +92,5 @@
   }
   .icon:focus{
     color: #ffd80e;
-  
   }
   

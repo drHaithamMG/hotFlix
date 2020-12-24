@@ -39,7 +39,7 @@ function drawTopRated() {
         html = `  <div class="movie-card">
         <img src="${imgurl + movie.poster_path}" alt="${movie.title}" title="${movie.title}" class="movie-img">
         <span class="rate ${classVote}">${convertToFloat(movie.vote_average)}</span>
-        <a class="movie-name" href="/pages/movie.html?id=${movie.id}">${movie.title}</a><br/>
+        <a class="movie-name" href="/pages/movie.html?id=${movie.id}">${movie.title}</a>
         <span class="date">${movie.release_date}</span>
       </div>`
         container.innerHTML += html;

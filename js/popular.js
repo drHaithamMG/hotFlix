@@ -62,4 +62,18 @@ function showError(error) {
 function checkVote(averageVote) {
     return (averageVote > 7) ? 'rate-high' : 'rate-low';
 }
-
+//Search listener
+const searchButton = document.querySelector('.icon');
+const searchInput = document.getElementById('movie-search');
+searchButton.addEventListener('click', () =>{
+    if(searchInput.value!='')
+    window.open(`pages/search.html?search=${searchInput.value}`,'_self');
+    else
+    alert("Search field is empty!\nKindly enter something")
+})
+searchInput.addEventListener("keypress", function (event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        searchButton.click();
+    }
+});

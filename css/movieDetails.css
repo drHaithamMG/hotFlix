@@ -10,30 +10,23 @@
   position: relative;
 }
 .movie-img-elements::after{
-  content: '+';
-  position: absolute;
-  bottom: -40px;
-  right: 66px;
-  font-size: 50px;
-  border-radius: 500px;
   background-color: #ffd80e;
-  padding: 10px 30px;
+  border-radius: 500px;
+  bottom: -40px;
+  content: '+';
   cursor: pointer;
-}
-.movie-details:before{
-  content: 'play';
+  font-size: 50px;
+  padding: 10px 30px;
   position: absolute;
-  top: 44px;
-  right: 407px;
-  font-size: 20px;
+  right: 66px;
 }
 .movie-img-warpper img {
   width: 75%;
 }
 .movie-details {
-  position: relative;
   margin: 0 auto;
   padding: 0;
+  position: relative;
   width: 100%;
 }
 .movie-elements-details {
@@ -43,9 +36,9 @@
   justify-content: space-between;
 }
 .movie-title {
-  position: relative;
   font-size: 60px;
   margin: 15px 0;
+  position: relative;
 }
 .movie-information {
   display: flex;
@@ -84,4 +77,19 @@
 }
 .title-main-actors {
   font-size: 24px;
+}
+.trailer-button-warpper{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+.trailer-button-img{
+  cursor: pointer;
+  margin: 12px auto;
+  outline: none;
+  width: 90px;
+}
+.trailer-player{
+ outline: none; 
+ padding: 10px;
 }

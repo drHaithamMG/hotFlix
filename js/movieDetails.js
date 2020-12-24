@@ -54,7 +54,7 @@ function parseData(data) {
 }
 /**
  * Render the cover on the page
- * @param {string} cover 
+ * @param {string} coverPath 
  * @returns {void}
  */
 function drawMovieCover(cover) {
@@ -83,6 +83,7 @@ function drawMovieCover(cover) {
  * @returns {void}
  */
 function drawMovieDetails(data) {
+    const movieId = data.id;
     const movieTitle = data.original_title;
     const releaseDate = data.release_date;
     const releaseYear = data.release_date.split('-')[0];
@@ -96,7 +97,6 @@ function drawMovieDetails(data) {
     <span class="movie-vote-avg">Rate :${voteAvg}/10</span>
     <span class="movie-release-date">Release date : ${releaseDate}</span>
     <span class="movie-release-year">Release year : ${releaseYear}</span>
-    
     <span class="movie-status">Movie Status : ${status}</span>
     <div class="movie-languages">Movie languages : </div>
     </div>`
@@ -106,12 +106,41 @@ function drawMovieDetails(data) {
         movieLanguages.innerHTML = `<span class="movie-language">${element.name}</span>`
     });
     movieDetails = `
+    <div class = 'trailer-button-warpper'>
+    <img class= 'trailer-button-img ' src="../assets/video-play-png-icon-.png" alt="play"> 
+    <span class = 'trailer-button-text' >${movieTitle}'s trailer</span>
+    <div class="trailer-section"></div>
+    </div>
     <span class="movie-overview">${overView}</span>
     <span class = "title-main-actors">Movie main actors</span>
     <div class="movie-stars"></div>`
     movieElementDetails.innerHTML += movieDetails;
     getStars(data.id);
-
+    const trailerButtonListener = document.querySelector('.trailer-button-img ');
+    trailerButtonListener.addEventListener('click', () => fetchMovieTrailer(movieId))
+}
+/**
+ * Fetch the movie trailer by it id
+ * @param {number} movieid 
+ * @returns {void}
+ */
+function fetchMovieTrailer(id) {
+    fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=72d1f40a92f130a0e4229203411f9b12&language=en-US
+    `)
+        .then(response => response.json())
+        .then(data => showTrailer(data.results))
+}
+/**
+ * Show the trailer on the html site
+ * @param {Object} movieTrailerInformation 
+ * @returns {void}
+ */
+function showTrailer(array) {
+    const movieTrailerKey = array[0].key;
+    const movieTrailerPlayer = document.querySelector('.trailer-button-warpper');
+    movieTrailerPlayer.innerHTML = `
+    <iframe width="1280" height="720" src="https://www.youtube.com/embed/${movieTrailerKey}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    `;
 }
 /**
  * Fetch stars of the movie
@@ -126,7 +155,6 @@ function getStars(id) {
                 data.cast.map(actor => movieStars.push(actor));
                 const actors = document.querySelector('.movie-stars');
                 movieStars.forEach(actor => {
-                    console.log(actor.name);
                     actors.innerHTML += `<span class='actor-span'>${actor.name}</span>`
                 })
             }
@@ -168,7 +196,7 @@ function parseSimilerData(data) {
             html = `  <div class="movie-card">
             <img src="${imgurl + movie.poster_path}" alt="${movie.title}" title="${movie.title}" class="movie-img">
             <span class="rate ${classVote}">${convertToFloat(movie.vote_average)}</span>
-            <a class="movie-name" href="/pages/movie.html?id=${movie.id}">${movie.title}</a><br/>
+            <a class="movie-name" href="/pages/movie.html?id=${movie.id}">${movie.title}</a>
             <span class="date">${movie.release_date}</span>
           </div>`
             container.innerHTML += html;
@@ -240,3 +268,18 @@ function turnOnButtonsListeners() {
         $(movieSlider).slick('slickNext');
     });
 }
+//Search listener
+const searchButton = document.querySelector('.icon');
+const searchInput = document.getElementById('movie-search');
+searchButton.addEventListener('click', () =>{
+    if(searchInput.value!='')
+    window.open(`search.html?search=${searchInput.value}`,'_self');
+    else
+    alert("Search field is empty!\nKindly enter something")
+})
+searchInput.addEventListener("keypress", function (event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        searchButton.click();
+    }
+});

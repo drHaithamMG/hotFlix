@@ -89,6 +89,7 @@ function drawMovieDetails(data) {
     const releaseYear = data.release_date.split('-')[0];
     const overView = data.overview;
     const languages = data.spoken_languages;
+    const genres =data.genres;
     const status = data.status;
     const voteAvg = data.vote_average;
     const movieElementDetails = document.querySelector('.movie-elements-details');
@@ -96,14 +97,13 @@ function drawMovieDetails(data) {
     <div class = 'movie-information'>
     <span class="movie-vote-avg">Rate :${voteAvg}/10</span>
     <span class="movie-release-date">Release date : ${releaseDate}</span>
-    <span class="movie-release-year">Release year : ${releaseYear}</span>
     <span class="movie-status">Movie Status : ${status}</span>
-    <div class="movie-languages">Movie languages : </div>
+    <div class="movie-languages-holder"></div>
     </div>`
     movieElementDetails.innerHTML = movieDetails;
-    const movieLanguages = document.querySelector('.movie-languages');
+    const movieLanguages = document.querySelector('.movie-languages-holder');
     languages.forEach(element => {
-        movieLanguages.innerHTML = `<span class="movie-language">${element.name}</span>`
+        movieLanguages.innerHTML += `<span class="movie-languages">${element.name}</span>`
     });
     movieDetails = `
     <div class = 'trailer-button-warpper'>
@@ -112,6 +112,14 @@ function drawMovieDetails(data) {
     <div class="trailer-section"></div>
     </div>
     <span class="movie-overview">${overView}</span>
+    <div class="movie-genres-holder"></div>
+    `;
+    movieElementDetails.innerHTML += movieDetails;
+    const movieGenres = document.querySelector('.movie-genres-holder');
+    genres.forEach(element => {
+        movieGenres.innerHTML += `<span class="movie-genres">${element.name}</span>`
+    });
+    movieDetails = `
     <span class = "title-main-actors">Movie main actors</span>
     <div class="movie-stars"></div>`
     movieElementDetails.innerHTML += movieDetails;

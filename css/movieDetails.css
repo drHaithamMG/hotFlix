@@ -48,11 +48,23 @@
 .movie-release-date,
 .movie-release-year,
 .movie-status,
-.movie-languages {
+.movie-languages{
   border-radius: 12px;
   border: 1px solid #ffd80e;
   margin-right: 10px;
   padding: 10px;
+}
+.movie-genres{
+  border-radius: 12px;
+  background:#ffd80e;
+  color: #1a191f;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.movie-languages-holder , .movie-genres-holder{
+  border-radius: 12px;
+  padding: 10px 0px;
 }
 .movie-overview {
   border-bottom: 5px double #ffd80e;
@@ -77,6 +89,7 @@
 }
 .title-main-actors {
   font-size: 24px;
+  margin: 10px;
 }
 .trailer-button-warpper{
   display: flex;

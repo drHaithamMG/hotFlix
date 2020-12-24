@@ -25,12 +25,12 @@ function getParameterByName(name, url = window.location.href) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 function queryForSearchContent(searchContent) {
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=72d1f40a92f130a0e4229203411f9b12&language=en-US&query=${searchContent}&page=${currentPage}&include_adult=false`)
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=72d1f40a92f130a0e4229203411f9b12&language=en-US&query=${searchContent}&include_adult=false`)
         .then(queryRespond => queryRespond.json())
         .then(queryResult => analysingResults(queryResult));
 }
 function analysingResults(queryResult) {
-    if (queryResult.results.length > 0) {
+    if (queryResult.total_pages>0) {
         totalPages = queryResult.total_pages;
         queryResult.results.map(queryResult => {
             searchMovies.push(queryResult);
@@ -69,7 +69,7 @@ function convertToFloat(number) {
     return Number.isInteger(number) ? (number + ".0") : (number.toString());
 }
 function showError(error) {
-    if (error == 401) {
+    if (error == 401||error==400) {
         console.log('URL is not found');
     }
 }
@@ -99,7 +99,6 @@ const secondSectionListener = document.querySelector('.contant-warpper');
 window.addEventListener("scroll", async () => {
     // Do not run if currently fetching
     if (isFetching) return;
-
     // Scrolled to bottom
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         await fetchIData();

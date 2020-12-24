@@ -15,4 +15,3 @@ function main() {
     topRated();
     popular();
 }
-

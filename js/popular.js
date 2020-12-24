@@ -21,7 +21,6 @@ const fetchIData = async () => {
         parsePopularData(data);
         isFetching = false;
     }
-
 }
 function parsePopularData(data) {
     totalPages = data.total_pages;

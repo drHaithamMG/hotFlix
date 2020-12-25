@@ -89,7 +89,7 @@ function drawMovieDetails(data) {
     const releaseYear = data.release_date.split('-')[0];
     const overView = data.overview;
     const languages = data.spoken_languages;
-    const genres =data.genres;
+    const genres = data.genres;
     const status = data.status;
     const voteAvg = data.vote_average;
     const movieElementDetails = document.querySelector('.movie-elements-details');
@@ -202,8 +202,15 @@ function parseSimilerData(data) {
         similerMovies.forEach(movie => {
             const classVote = checkVote(movie.vote_average);
             html = `  <div class="movie-card">
+            <div class="movie-img-container">
             <img src="${imgurl + movie.poster_path}" alt="${movie.title}" title="${movie.title}" class="movie-img">
             <span class="rate ${classVote}">${convertToFloat(movie.vote_average)}</span>
+            <div class="overlay">
+                <a href="/pages/movie.html?id=${movie.id}" class="img-play-icon" title="${movie.title}">
+                    <i class="fa fa-play"></i>
+                </a>
+            </div>
+            </div>
             <a class="movie-name" href="/pages/movie.html?id=${movie.id}">${movie.title}</a>
             <span class="date">${movie.release_date}</span>
           </div>`
@@ -279,13 +286,13 @@ function turnOnButtonsListeners() {
 //Search listener
 const searchButton = document.querySelector('.icon');
 const searchInput = document.getElementById('movie-search');
-searchButton.addEventListener('click', () =>{
-    if(searchInput.value!='')
-    window.open(`search.html?search=${searchInput.value}`,'_self');
+searchButton.addEventListener('click', () => {
+    if (searchInput.value != '')
+        window.open(`search.html?search=${searchInput.value}`, '_self');
     else
-    alert("Search field is empty!\nKindly enter something")
+        alert("Search field is empty!\nKindly enter something")
 })
-searchInput.addEventListener("keypress", function (event) {
+searchInput.addEventListener("keypress", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         searchButton.click();

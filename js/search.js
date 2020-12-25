@@ -24,27 +24,29 @@ function getParameterByName(name, url = window.location.href) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
+
 function queryForSearchContent(searchContent) {
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=72d1f40a92f130a0e4229203411f9b12&language=en-US&query=${searchContent}&include_adult=false`)
         .then(queryRespond => queryRespond.json())
         .then(queryResult => analysingResults(queryResult));
 }
+
 function analysingResults(queryResult) {
-    if (queryResult.total_pages>0) {
+    if (queryResult.total_pages > 0) {
         totalPages = queryResult.total_pages;
         queryResult.results.map(queryResult => {
             searchMovies.push(queryResult);
         });
         drawMovies();
-    }
-    else {
+    } else {
         searchWarpper.innerHTML = `
         <span class="search-title">Search For ${searchContent}</span>
-        <span class="search-failer">Unfortunately, result not found.
-        Try to be more specific or pick another keyword /title</span>
+        <span class="search-failer">Unfortunately, ${searchContent} is not found.
+        Try to be more specific or pick another keyword /movie title</span>
         `;
     }
 }
+
 function drawMovies() {
     searchWarpper.innerHTML = `
         <span class="search-title">Search For ${searchContent}</span>
@@ -55,21 +57,29 @@ function drawMovies() {
     const imgurl = 'https://image.tmdb.org/t/p/original/';
     searchMovies.forEach(movie => {
         const classVote = checkVote(movie.vote_average);
-        const imagePath = imgurl + movie.poster_path;
-        html = `<div class="movie-card">
-        <img src="${imagePath}" alt="${movie.title}" title="${movie.title}" class="movie-img">
+        html = `  <div class="movie-card">
+        <div class="movie-img-container">
+        <img src="${imgurl + movie.poster_path}" alt="${movie.title}" title="${movie.title}" class="movie-img">
         <span class="rate ${classVote}">${convertToFloat(movie.vote_average)}</span>
+        <div class="overlay">
+            <a href="/pages/movie.html?id=${movie.id}" class="img-play-icon" title="${movie.title}">
+                <i class="fa fa-play"></i>
+            </a>
+        </div>
+        </div>
         <a class="movie-name" href="/pages/movie.html?id=${movie.id}">${movie.title}</a>
         <span class="date">${movie.release_date}</span>
       </div>`
         container.innerHTML += html;
     })
 }
+
 function convertToFloat(number) {
     return Number.isInteger(number) ? (number + ".0") : (number.toString());
 }
+
 function showError(error) {
-    if (error == 401||error==400) {
+    if (error == 401 || error == 400) {
         console.log('URL is not found');
     }
 }
@@ -80,7 +90,7 @@ function showError(error) {
 function checkVote(averageVote) {
     return (averageVote > 7) ? 'rate-high' : 'rate-low';
 }
-const fetchIData = async () => {
+const fetchIData = async() => {
     isFetching = true;
     popularMovies = [];
     currentPage = currentPage + 1;
@@ -94,13 +104,20 @@ const fetchIData = async () => {
     }
 }
 
-const secondSectionListener = document.querySelector('.contant-warpper');
 //scroll listener
-window.addEventListener("scroll", async () => {
+function getDocHeight() {
+    let D = document;
+    return Math.max(D.body.scrollHeight, D.documentElement.scrollHeight, D.body.offsetHeight, D.documentElement.offsetHeight, D.body.clientHeight, D.documentElement.clientHeight)
+}
+window.addEventListener("scroll", async() => {
     // Do not run if currently fetching
     if (isFetching) return;
-    // Scrolled to bottom
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    let winheight = window.innerHeight || (document.documentElement || document.body).clientHeight
+    let docheight = getDocHeight()
+    let scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
+    let trackLength = docheight - winheight
+    let pctScrolled = Math.floor(scrollTop / trackLength * 100) // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
+    if (pctScrolled > 90) {
         await fetchIData();
     }
 });
@@ -113,7 +130,7 @@ searchButton.addEventListener('click', () => {
     else
         alert("Search field is empty!\nKindly enter something")
 })
-searchInput.addEventListener("keypress", function (event) {
+searchInput.addEventListener("keypress", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         searchButton.click();

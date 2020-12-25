@@ -2,7 +2,6 @@
 .footer {
   background-color: #1a191f;
   border-top: 1px solid #2d2b36;
-
 }
 .warpper-footer {
   display: flex;
@@ -43,4 +42,7 @@
   font-size: 30px;
   outline: none;
   padding: 15px;
+}
+.left-section-footer a{
+  align-self: center;
 }

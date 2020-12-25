@@ -1,5 +1,4 @@
-/**Importing js scrupts
- */
+//Importing js scripts
 'topRated.js'
 'listeners.js'
 'popular.js'
@@ -16,4 +15,3 @@ function main() {
     topRated();
     popular();
 }
-

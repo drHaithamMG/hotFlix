@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hotflix-Search</title>
     <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/header.css" />
     <link rel="stylesheet" href="../css/section1.css" />
+    <link rel="stylesheet" href="../css/searchPageDesign.css">
     <link rel="stylesheet" href="../css/section2.css" />
     <link rel="stylesheet" href="../css/footer.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -19,18 +21,20 @@
       rel="stylesheet"
     />
   </head>
-
-  <body>
-    <div class="container" id="header">
-      <header class="header">
+  <body id="body">
+  <header class="header">
+    <div class="container">
+      <div class="header-warpper">
         <div class="left-header">
-          <img src="../assets/logo.svg" alt="HOTFLIX" class="logo" />
+          <a href="../index.html"
+            ><img src="../assets/logo.svg" alt="HOTFLIX" class="logo"
+          /></a>
           <ul class="nav">
-            <li class="nav-item"><a href="index.html">HOME</a></li>
-            <li class="nav-item"><a href="index.html">CATALOG</a></li>
-            <li class="nav-item"><a href="index.html">PRICING PLAN</a></li>
-            <li class="nav-item"><a href="index.html">HELP</a></li>
-            <li class="nav-item"><a href="index.html">...</a></li>
+            <li class="nav-item"><a href="../index.html">HOME</a></li>
+            <li class="nav-item"><a href="#">CATALOG</a></li>
+            <li class="nav-item"><a href="#">PRICING PLAN</a></li>
+            <li class="nav-item"><a href="#">HELP</a></li>
+            <li class="nav-item"><a href="#">...</a></li>
           </ul>
         </div>
         <div class="right-header">
@@ -46,34 +50,24 @@
           <span class="language">EN</span>
           <button type="button" class="sign-in-button">SIGN IN</button>
         </div>
-      </header>
-    </div>
-    <!-- section1 -->
-    <section class="sec1">
-      <div class="container">
-        <div class="contant">
-          <div class="holder">
-            <span class="main-title">More to watch</span>
-            <div class="buttons">
-              <button class="left-button-slider" title="Previous">
-                &leftarrow;
-              </button>
-              <button class="right-button-slider" title="Next">
-                &rightarrow;
-              </button>
-            </div>
-          </div>
-          <div class="slider"></div>
-        </div>
       </div>
-    </section>
-    <!-- End section 1 -->
-
+    </div>
+  </header>
+    <main>
+      <section class="search-section">
+        <div class="container">
+          <div class="search-warpper">
+          </div>
+        </div>
+      </section>
+    </main>
     <footer class="footer">
       <div class="container">
         <div class="warpper-footer">
           <div class="left-section-footer">
-            <img src="../assets/logo.svg" alt="HOTFLIX" class="logo" />
+            <a href="../index.html"
+              ><img src="../assets/logo.svg" alt="HOTFLIX" class="logo"
+            /></a>
             <div class="spans">
               <span>&copy;2020 HotFlix</span>
               <span>Create by Dmitry Volkov</span>
@@ -104,9 +98,6 @@
       type="text/javascript"
       src="../slider files/slick-1.8.1/slick/slick.min.js"
     ></script>
-    <script src="../js/main.js"></script>
-    <script src="../js/topRated.js"></script>
-    <script src="../js/listeners.js"></script>
-    <script src="../js/popular.js"></script>
+    <script src="../js/search.js"></script>
   </body>
 </html>

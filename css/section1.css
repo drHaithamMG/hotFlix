@@ -1,4 +1,5 @@
 /*Section 1 elements*/
+/*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_image_overlay_icon*/
 .sec1 {
   margin-top: 10px;
   position: relative;
@@ -58,6 +59,12 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 224px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+.movie-name:hover{
+  color: #ffd80e;
+  outline: none;
 }
 .rate {
   background-color: #291a1a;

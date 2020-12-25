@@ -1,0 +1,101 @@
+.header {
+  width: 100%;
+  border-bottom: 1px solid #2d2b36;
+  position: fixed;
+  top: 0;
+  background-color: #1a191f;
+   z-index: 1;
+}
+.header-warpper {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+.left-header {
+  display: flex;
+  justify-content: center;
+}
+.left-header a {
+  align-self: center;
+}
+.logo {
+  width: 100px;
+}
+.nav {
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: auto 15px;
+}
+.nav a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin: 0 20px;
+  text-decoration: none;
+}
+.nav a:hover {
+  color: #ffd80e;
+}
+.right-header {
+  display: flex;
+  justify-content: center;
+}
+.search {
+  background-color: #212028;
+  border-radius: 5px;
+  color: #a6a6a9;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #212028;
+}
+.search:focus-within {
+  border-radius: 5px;
+  border: 1px solid #ffd80e;
+}
+.search input {
+  background: transparent;
+  border: none;
+  color: #a6a6a9;
+  font-size: 16px;
+  font-size: 16px;
+  outline: none;
+  padding: 15px 10px;
+}
+.search input:focus {
+  padding: 15px 10px;
+}
+.language {
+  color: #a6a6a9;
+  cursor: pointer;
+  font-size: 16px;
+  margin: auto 30px;
+}
+.language:hover {
+  color: #ffd80e;
+}
+.sign-in-button {
+  background: none;
+  border-radius: 5px;
+  border: 1px solid #ffd80e;
+  color: #a6a6a9;
+  font-size: 14px;
+  outline: none;
+  padding: 0px 40px;
+}
+.sign-in-button:hover {
+  background: #ffd80e;
+  border: 1px solid #212028;
+  color: #212028;
+  cursor: pointer;
+}
+.icon {
+  margin: 10px;
+}
+.icon:hover {
+  color: #ffd80e;
+  cursor: pointer;
+}
+.icon:focus {
+  color: #ffd80e;
+}

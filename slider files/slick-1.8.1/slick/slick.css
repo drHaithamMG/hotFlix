@@ -78,7 +78,6 @@
 {
     display: none;
     float: left;
-
     height: 100%;
     min-height: 1px;
 }
@@ -100,7 +99,9 @@
 }
 .slick-initialized .slick-slide
 {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .slick-loading .slick-slide
 {
@@ -117,3 +118,4 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+

@@ -1,4 +1,3 @@
-'listeners.js'
 //get slider class
 const mainSlider = document.querySelector('.slider');
 //left button for slider listener

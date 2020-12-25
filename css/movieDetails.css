@@ -1,0 +1,108 @@
+.movie-img-warpper {
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+.movie-img-elements {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.movie-img-elements::after{
+  background-color: #ffd80e;
+  border-radius: 500px;
+  bottom: -40px;
+  content: '+';
+  cursor: pointer;
+  font-size: 50px;
+  padding: 10px 30px;
+  position: absolute;
+  right: 66px;
+}
+.movie-img-warpper img {
+  width: 75%;
+}
+.movie-details {
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+.movie-elements-details {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.movie-title {
+  font-size: 60px;
+  margin: 15px 0;
+  position: relative;
+}
+.movie-information {
+  display: flex;
+  justify-content: space-between;
+}
+.movie-vote-avg,
+.movie-release-date,
+.movie-release-year,
+.movie-status,
+.movie-languages{
+  border-radius: 12px;
+  border: 1px solid #ffd80e;
+  margin-right: 10px;
+  padding: 10px;
+}
+.movie-genres{
+  border-radius: 12px;
+  background:#ffd80e;
+  color: #1a191f;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.movie-languages-holder , .movie-genres-holder{
+  border-radius: 12px;
+  padding: 10px 0px;
+}
+.movie-overview {
+  border-bottom: 5px double #ffd80e;
+  border-top: 5px double #ffd80e;
+  font-size: 24px;
+  margin: 30px 0;
+  padding: 15px;
+  text-align: center;
+}
+.movie-stars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px 0;
+}
+.actor-span {
+  border-radius: 12px;
+  border: 1px solid #ffd80e;
+  font-size: 14px;
+  margin: 5px;
+  padding: 10px;
+}
+.title-main-actors {
+  font-size: 24px;
+  margin: 10px;
+}
+.trailer-button-warpper{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+.trailer-button-img{
+  cursor: pointer;
+  margin: 12px auto;
+  outline: none;
+  width: 90px;
+}
+.trailer-player{
+ outline: none; 
+ padding: 10px;
+}

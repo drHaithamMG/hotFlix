@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hotflix - Home</title>
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/section1.css" />
     <link rel="stylesheet" href="css/section2.css" />
     <link rel="stylesheet" href="css/footer.css" />
@@ -19,35 +20,40 @@
       rel="stylesheet"
     />
   </head>
-
   <body>
-    <div class="container" id="header">
-      <header class="header">
-        <div class="left-header">
-          <img src="assets/logo.svg" alt="HOTFLIX" class="logo" />
-          <ul class="nav">
-            <li class="nav-item"><a href="index.html">HOME</a></li>
-            <li class="nav-item"><a href="index.html">CATALOG</a></li>
-            <li class="nav-item"><a href="index.html">PRICING PLAN</a></li>
-            <li class="nav-item"><a href="index.html">HELP</a></li>
-            <li class="nav-item"><a href="index.html">...</a></li>
-          </ul>
-        </div>
-        <div class="right-header">
-          <div class="search">
-            <input
-              type="search"
-              name="movie-search"
-              id="movie-search"
-              placeholder="Search..."
-            />
-            <label for="movie-search" class="icon material-icons">search</label>
+    <header class="header">
+      <div class="container">
+        <div class="header-warpper">
+          <div class="left-header">
+            <a href="../index.html"
+              ><img src="../assets/logo.svg" alt="HOTFLIX" class="logo"
+            /></a>
+            <ul class="nav">
+              <li class="nav-item"><a href="../index.html">HOME</a></li>
+              <li class="nav-item"><a href="#">CATALOG</a></li>
+              <li class="nav-item"><a href="#">PRICING PLAN</a></li>
+              <li class="nav-item"><a href="#">HELP</a></li>
+              <li class="nav-item"><a href="#">...</a></li>
+            </ul>
           </div>
-          <span class="language">EN</span>
-          <button type="button" class="sign-in-button">SIGN IN</button>
+          <div class="right-header">
+            <div class="search">
+              <input
+                type="search"
+                name="movie-search"
+                id="movie-search"
+                placeholder="Search..."
+              />
+              <label for="movie-search" class="icon material-icons">search</label>
+            </div>
+            <span class="language">EN</span>
+            <button type="button" class="sign-in-button">SIGN IN</button>
+          </div>
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
+    
+    <main>
     <!-- section1 -->
     <section class="sec1">
       <div class="container">
@@ -88,6 +94,8 @@
         <div class="contant-warpper"></div>
       </div>
     </section>
+  </main>
+
     <footer class="footer">
       <div class="container">
         <div class="warpper-footer">

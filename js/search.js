@@ -41,8 +41,8 @@ function analysingResults(queryResult) {
     } else {
         searchWarpper.innerHTML = `
         <span class="search-title">Search For ${searchContent}</span>
-        <span class="search-failer">Unfortunately, result not found.
-        Try to be more specific or pick another keyword /title</span>
+        <span class="search-failer">Unfortunately, ${searchContent} is not found.
+        Try to be more specific or pick another keyword /movie title</span>
         `;
     }
 }
@@ -104,13 +104,20 @@ const fetchIData = async() => {
     }
 }
 
-const secondSectionListener = document.querySelector('.contant-warpper');
 //scroll listener
+function getDocHeight() {
+    let D = document;
+    return Math.max(D.body.scrollHeight, D.documentElement.scrollHeight, D.body.offsetHeight, D.documentElement.offsetHeight, D.body.clientHeight, D.documentElement.clientHeight)
+}
 window.addEventListener("scroll", async() => {
     // Do not run if currently fetching
     if (isFetching) return;
-    // Scrolled to bottom
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    let winheight = window.innerHeight || (document.documentElement || document.body).clientHeight
+    let docheight = getDocHeight()
+    let scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop
+    let trackLength = docheight - winheight
+    let pctScrolled = Math.floor(scrollTop / trackLength * 100) // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
+    if (pctScrolled > 90) {
         await fetchIData();
     }
 });

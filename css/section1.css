@@ -38,7 +38,7 @@
 .buttons {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin: 50px 0 auto;
 }
 
 .buttons button {
@@ -132,15 +132,6 @@
 
 .rate-low {
     border: 1px solid red;
-}
-
-.movie-img::before {
-    content: 'welcome';
-    height: 332px;
-    object-fit: cover;
-    opacity: 0.1;
-    position: absolute;
-    width: 224px;
 }
 
 .movie-img {

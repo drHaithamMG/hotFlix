@@ -78,7 +78,7 @@ searchButton.addEventListener('click', () => {
     if (searchInput.value != '')
         window.open(`pages/search.html?search=${searchInput.value}`, '_self');
     else
-        alert("Search field is empty!\nKindly enter something")
+        alert("Search bar is empty!\nKindly put something in it.")
 })
 searchInput.addEventListener("keypress", function(event) {
     if (event.keyCode === 13) {

@@ -9,6 +9,11 @@ let isFetching = false;
 function popular() {
     fetchIData();
 }
+/**
+ * Fetch new data
+ * @param {void}void
+ * @returns {void} void
+ */
 const fetchIData = async() => {
     isFetching = true;
     popularMovies = [];
@@ -22,7 +27,10 @@ const fetchIData = async() => {
         isFetching = false;
     }
 }
-
+/**Take the new data and convert it to a meaningful data
+ *@param {Object}data
+ *@returns {void}
+ */
 function parsePopularData(data) {
     totalPages = data.total_pages;
     data.results.map(movie => {
@@ -30,7 +38,10 @@ function parsePopularData(data) {
     });
     drawPopular();
 }
-
+/**Render the data into the html page
+ * @param {void}void
+ * @returns {void}
+ */
 function drawPopular() {
     const container = document.querySelector('.contant-warpper');
     let html = ``;
@@ -54,11 +65,18 @@ function drawPopular() {
     })
 
 }
-
+/**
+ * Take the voat number and make it a float number for better styling
+ * @param {number} rate 
+ * @returns {string} rate_float
+ */
 function convertToFloat(number) {
     return Number.isInteger(number) ? (number + ".0") : (number.toString());
 }
-
+/**
+ * Handle errors from fetching data
+ * @param {number} errortype 
+ */
 function showError(error) {
     if (error == 401) {
         console.log('URL is not found');

@@ -15,7 +15,7 @@ function getDocHeight() {
     let D = document;
     return Math.max(D.body.scrollHeight, D.documentElement.scrollHeight, D.body.offsetHeight, D.documentElement.offsetHeight, D.body.clientHeight, D.documentElement.clientHeight)
 }
-window.addEventListener("scroll", async() => {
+window.addEventListener("scroll", async () => {
     // Do not run if currently fetching
     if (isFetching) return;
     let winheight = window.innerHeight || (document.documentElement || document.body).clientHeight
@@ -28,4 +28,22 @@ window.addEventListener("scroll", async() => {
         await fetchIData();
     }
 });
-//
+//burger-menu
+const navSlide = () =>{
+    const burger=document.querySelector('.burger');
+    const nav = document.querySelector('.nav');
+    burger.addEventListener("click", ()=>{
+        nav.classList.toggle('nav-active');
+        burger.classList.toggle('x-style')
+    })
+}
+//Search-mobile
+const searchMobile = () =>{
+    const searchMobileIcon=document.querySelector('.search-icon-mobile');
+    const search = document.querySelector('.search');
+    searchMobileIcon.addEventListener("click", ()=>{
+        search.classList.toggle('hide-search');
+        searchMobileIcon.classList.toggle('search-active')
+    })
+}
+

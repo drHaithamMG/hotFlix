@@ -14,4 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
 function main() {
     topRated();
     popular();
+    navSlide();
+    searchMobile();
 }

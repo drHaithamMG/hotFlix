@@ -39,6 +39,8 @@
   font-size: 60px;
   margin: 15px 0;
   position: relative;
+  width: 100%;
+  text-align: center;
 }
 .movie-information {
   display: flex;
@@ -90,6 +92,8 @@
 .title-main-actors {
   font-size: 24px;
   margin: 10px;
+  width: 100%;
+  text-align: center;
 }
 .trailer-button-warpper{
   display: flex;

@@ -1,0 +1,105 @@
+@media screen and (max-width:1200px) {
+    .body{
+        overflow-x: hidden;
+    }
+    .main {
+        width: 100%;
+        margin-top: 65px;
+    }
+    .container {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        width: 100%;
+    }
+    .header-warpper{
+        padding:15px 15px;
+    }
+    .desktop-version{
+        display:none;
+    }
+    .nav {
+    background-color: #1a191f;
+    flex-direction: column;
+    justify-content:unset;
+    height: 954px;
+    overflow: auto;
+    padding: 0;
+    position: absolute;
+    right: -16px;
+    top: 65px;
+    width: 50%;
+    transform: translateX(100%);
+    transition:transform 0.3s ease-in;
+    }
+    .x-style .line-1{
+        transform:rotate(-45deg) translate(-5px,6px);
+    }
+    .x-style .line-2{
+        opacity: 0;
+    }
+    .x-style .line-3{
+        transform:rotate(+45deg) translate(-5px,-6px);
+    }
+    .nav-active{
+        transform: translateX(0%)
+    }
+    .mobile-icons{
+        display:flex;
+        justify-content: space-between;
+        width: 120px;
+        align-items: center;
+        font-size: 26px;
+        color: #a6a6a9;
+    }
+    .search{
+        position: fixed;
+        top:-50px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        transition:transform 0.3s ease-in;
+
+    }
+    .hide-search{
+        top:65px;
+    }
+    .search input {
+        width: calc(100% - 20px);
+        min-width: 200px;
+        }
+   .burger div{
+       width:25px;
+       height:3px;
+       background-color:#a6a6a9;
+       margin:5px;
+       cursor:pointer;
+   }
+   .signup-mobile{
+       border:1px solid #ffd80e;
+       padding :5px;
+       border-radius: 5px;
+       outline:none;
+   }
+   .search-icon-mobile:hover{
+    color: #ffd80e;
+    cursor: pointer;
+    outline:none;
+}
+.search-active{
+    color: #ffd80e;
+    cursor: pointer;
+    outline:none;
+}
+   .signup-mobile:hover{
+    background: #ffd80e;
+    border: 1px solid #212028;
+    color: #212028;
+    cursor: pointer;
+}
+
+/*Section 2 */
+.not-active-nav{
+    display: none;
+}
+}

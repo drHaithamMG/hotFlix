@@ -24,13 +24,22 @@ function getParameterByName(name, url = window.location.href) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
-
+/**
+ * Take search content and make a query then fetch the data
+ * @param {string} searchContent 
+ * @returns {void} void
+ */
 function queryForSearchContent(searchContent) {
     fetch(`https://api.themoviedb.org/3/search/movie?api_key=72d1f40a92f130a0e4229203411f9b12&language=en-US&query=${searchContent}&include_adult=false`)
         .then(queryRespond => queryRespond.json())
         .then(queryResult => analysingResults(queryResult));
 }
-
+/**
+ * Check the query resuld wheather it's empty or not empty 
+ * then convert data to a meaningful style
+ * @param {Object} queryResult 
+ * @returns {void} void
+ */
 function analysingResults(queryResult) {
     if (queryResult.total_pages > 0) {
         totalPages = queryResult.total_pages;
@@ -46,7 +55,11 @@ function analysingResults(queryResult) {
         `;
     }
 }
-
+/**
+ * Draw the movie card on the html page
+ * @param {void}void
+ * @returns {void}
+ */
 function drawMovies() {
     searchWarpper.innerHTML = `
         <span class="search-title">Search For ${searchContent}</span>
@@ -73,11 +86,18 @@ function drawMovies() {
         container.innerHTML += html;
     })
 }
-
+/**
+ * Take the voat number and make it a float number for better styling
+ * @param {number} rate 
+ * @returns {string} rate_float
+ */
 function convertToFloat(number) {
     return Number.isInteger(number) ? (number + ".0") : (number.toString());
 }
-
+/**
+ * Handle errors from fetching data
+ * @param {number} errortype 
+ */
 function showError(error) {
     if (error == 401 || error == 400) {
         console.log('URL is not found');
@@ -136,3 +156,23 @@ searchInput.addEventListener("keypress", function(event) {
         searchButton.click();
     }
 });
+//burger-menu
+const navSlide = () =>{
+    const burger=document.querySelector('.burger');
+    const nav = document.querySelector('.nav');
+    burger.addEventListener("click", ()=>{
+        nav.classList.toggle('nav-active');
+        burger.classList.toggle('x-style')
+    })
+}
+//Search-mobile
+const searchMobile = () =>{
+    const searchMobileIcon=document.querySelector('.search-icon-mobile');
+    const search = document.querySelector('.search');
+    searchMobileIcon.addEventListener("click", ()=>{
+        search.classList.toggle('hide-search');
+        searchMobileIcon.classList.toggle('search-active')
+    })
+}
+navSlide();
+searchMobile();

@@ -57,6 +57,36 @@ function drawTopRated() {
         arrows: false,
         slidesToScroll: 1,
         slidesToShow: 5,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    infinite: false,
+                }
+            },
+            {
+                breakpoint: 950,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1
+                }
+            }, {
+                breakpoint: 660,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 500,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
 
     });
 }
@@ -76,7 +106,11 @@ function showError(error) {
 function checkVote(averageVote) {
     return (averageVote > 7) ? 'rate-high' : 'rate-low';
 }
-
+/**
+ * Take the voat number and make it a float number for better styling
+ * @param {number} rate 
+ * @returns {string} rate_float
+ */
 function convertToFloat(number) {
     return Number.isInteger(number) ? (number + ".0") : (number.toString());
 }

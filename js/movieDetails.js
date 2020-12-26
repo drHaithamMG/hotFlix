@@ -3,6 +3,8 @@ window.addEventListener('load', (event) => {
     const movieID = getParameterByName('id');
     fetchMovieDetails(movieID);
     getSimiler(movieID);
+    navSlide();
+searchMobile();
 });
 //Global variables
 let similerMovies = [];
@@ -95,9 +97,9 @@ function drawMovieDetails(data) {
     const movieElementDetails = document.querySelector('.movie-elements-details');
     let movieDetails = `<span class="movie-title">${movieTitle}</span>
     <div class = 'movie-information'>
-    <span class="movie-vote-avg">Rate :${voteAvg}/10</span>
-    <span class="movie-release-date">Release date : ${releaseDate}</span>
-    <span class="movie-status">Movie Status : ${status}</span>
+    <span class="movie-vote-avg" title="Rate">${voteAvg}/10</span>
+    <span class="movie-release-date" title="Release date">${releaseDate}</span>
+    <span class="movie-status" title="Movie Status">${status}</span>
     <div class="movie-languages-holder"></div>
     </div>`
     movieElementDetails.innerHTML = movieDetails;
@@ -221,7 +223,36 @@ function parseSimilerData(data) {
             arrows: false,
             slidesToScroll: 5,
             slidesToShow: 5,
-
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                        infinite: false,
+                    }
+                },
+                {
+                    breakpoint: 950,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                }, {
+                    breakpoint: 660,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 500,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         });
     }
 
@@ -292,9 +323,36 @@ searchButton.addEventListener('click', () => {
     else
         alert("Search field is empty!\nKindly enter something")
 })
-searchInput.addEventListener("keypress", function(event) {
+searchInput.addEventListener("keypress", function (event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         searchButton.click();
     }
 });
+/**
+ * add the functionallity for the burger button
+ * @param {void} void
+ * @returns {void}
+ */
+const navSlide = () =>{
+    const burger=document.querySelector('.burger');
+    const nav = document.querySelector('.nav');
+    burger.addEventListener("click", ()=>{
+        nav.classList.toggle('nav-active');
+        burger.classList.toggle('x-style')
+    })
+}
+/**
+ * add the functionallity for the search button
+ * @param {void} void
+ * @returns {void}
+ */
+const searchMobile = () =>{
+    const searchMobileIcon=document.querySelector('.search-icon-mobile');
+    const search = document.querySelector('.search');
+    searchMobileIcon.addEventListener("click", ()=>{
+        search.classList.toggle('hide-search');
+        searchMobileIcon.classList.toggle('search-active')
+    })
+}
+

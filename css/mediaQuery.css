@@ -102,4 +102,26 @@
 .not-active-nav{
     display: none;
 }
+/*Footer*/
+.warpper-footer{
+    position: relative;
+    flex-direction: column;
+}
+.left-section-footer{
+    width:100%;
+}
+.spans{
+    position: absolute;
+    bottom: 0px;
+}
+.swip-up {
+    position: absolute;
+    bottom: 0px;  
+}
+.footer-nav{
+    width: 100%;
+}
+.right-section-footer{
+    width:100%;
+}
 }

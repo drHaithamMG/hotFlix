@@ -1,83 +1,83 @@
 /*Footer*/
 
 .footer {
-    background-color: #1a191f;
-    border-top: 1px solid #2d2b36;
+  background-color: #1a191f;
+  border-top: 1px solid #2d2b36;
 }
 
 .warpper-footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
 }
 
 .left-section-footer {
-    display: flex;
+  display: flex;
 }
 
 .spans {
-    color: rgba(255, 255, 255, 0.7);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 40px;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 40px;
 }
-
 .right-section-footer {
-    width: 30%;
-}
+width: 30%;}
 
 .spans span {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .footer-nav {
-    color: rgba(255, 255, 255, 0.7);
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding-inline-start: 0px;
 }
 
 .footer-nav a {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 14px;
-    text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  text-decoration: none;
 }
 
 .swip-up {
-    border-radius: 5px;
-    border: 1px solid #ffd80e;
-    font-size: 30px;
-    outline: none;
-    padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ffd80e;
+  font-size: 30px;
+  outline: none;
+  padding: 7px;
 }
 
 .left-section-footer a {
-    align-self: center;
+  align-self: center;
 }
 
 @media screen and (max-width: 1200px) {
-    .warpper-footer {
-      position: relative;
-      flex-direction: column;
-    }
-    .left-section-footer {
-      width: 100%;
-    }
-    .spans {
-      position: absolute;
-      bottom: 0px;
-    }
-    .swip-up {
-      position: absolute;
-      bottom: 0px;
-      right:0;
-    }
-    .footer-nav li{
-      display: flex;
-    }
-    .right-section-footer {
-      width: 100%;
-    }
+  .warpper-footer {
+    position: relative;
+    flex-direction: column;
   }
+  .footer-nav{
+    justify-content: left;
+  }
+  .spans {
+    position: absolute;
+    bottom: 0px;
+    margin-left: 0;
+
+  }
+  .swip-up {
+    position: absolute;
+    bottom: 0px;
+    right:0;
+  }
+  .footer-nav li{
+    display: flex;
+    margin: 0 30px 15px 0;
+  }.right-section-footer {
+    width: auto}
   
+}

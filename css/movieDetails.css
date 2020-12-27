@@ -11,14 +11,14 @@
 }
 .movie-img-elements::after{
   background-color: #ffd80e;
-  border-radius: 500px;
-  bottom: -40px;
+  border-radius: 50%;
+  bottom: calc(75% - 82%);
   content: '+';
   cursor: pointer;
   font-size: 50px;
   padding: 10px 30px;
   position: absolute;
-  right: 66px;
+  right: calc(75% - 70%);
 }
 .movie-img-warpper img {
   width: 75%;
@@ -45,6 +45,7 @@
 .movie-information {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .movie-vote-avg,
 .movie-release-date,

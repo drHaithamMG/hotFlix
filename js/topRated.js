@@ -60,7 +60,7 @@ function drawTopRated() {
         slidesToShow: 5,
         responsive: [
             {
-                breakpoint: 1200,
+                breakpoint: 1189,
                 settings: {
                     slidesToShow: 4,
                     slidesToScroll: 1,
@@ -68,7 +68,7 @@ function drawTopRated() {
                 }
             },
             {
-                breakpoint: 926,
+                breakpoint: 923,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1
@@ -81,7 +81,7 @@ function drawTopRated() {
                 }
             },
             {
-                breakpoint: 477,
+                breakpoint: 475,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1

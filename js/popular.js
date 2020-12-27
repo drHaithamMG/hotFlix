@@ -45,6 +45,7 @@ function parsePopularData(data) {
 function drawPopular() {
     const container = document.querySelector('.contant-warpper');
     let html = ``;
+    const path = window.location.pathname;
     const imgurl = 'https://image.tmdb.org/t/p/original/';
     popularMovies.forEach(movie => {
         const classVote = checkVote(movie.vote_average);
@@ -53,12 +54,12 @@ function drawPopular() {
         <img src="${imgurl + movie.poster_path}" alt="${movie.title}" title="${movie.title}" class="movie-img">
         <span class="rate ${classVote}">${convertToFloat(movie.vote_average)}</span>
         <div class="overlay">
-            <a href="/pages/movie.html?id=${movie.id}" class="img-play-icon" title="${movie.title}">
+            <a href="${path.substring(0, path.lastIndexOf('/'))}/pages/movie.html?id=${movie.id}" class="img-play-icon" title="${movie.title}">
                 <i class="fa fa-play"></i>
             </a>
         </div>
         </div>
-        <a class="movie-name" href="/pages/movie.html?id=${movie.id}">${movie.title}</a>
+        <a class="movie-name" href="${path.substring(0, path.lastIndexOf('/'))}/pages/movie.html?id=${movie.id}">${movie.title}</a>
         <span class="date">${movie.release_date}</span>
       </div>`
         container.innerHTML += html;

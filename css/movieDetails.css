@@ -9,16 +9,16 @@
   justify-content: center;
   position: relative;
 }
-.movie-img-elements::after{
+.movie-img-elements::after {
   background-color: #ffd80e;
-  border-radius: 500px;
-  bottom: -40px;
-  content: '+';
+  border-radius: 50%;
+  bottom: calc(75% - 82%);
+  content: "+";
   cursor: pointer;
   font-size: 50px;
   padding: 10px 30px;
   position: absolute;
-  right: 66px;
+  right: calc(75% - 70%);
 }
 .movie-img-warpper img {
   width: 75%;
@@ -44,27 +44,29 @@
 }
 .movie-information {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .movie-vote-avg,
 .movie-release-date,
 .movie-release-year,
 .movie-status,
-.movie-languages{
+.movie-languages {
   border-radius: 12px;
   border: 1px solid #ffd80e;
   margin-right: 10px;
   padding: 10px;
 }
-.movie-genres{
+.movie-genres {
   border-radius: 12px;
-  background:#ffd80e;
+  background: #ffd80e;
   color: #1a191f;
   margin-right: 10px;
   padding: 10px;
 }
 
-.movie-languages-holder , .movie-genres-holder{
+.movie-languages-holder,
+.movie-genres-holder {
   border-radius: 12px;
   padding: 10px 0px;
 }
@@ -95,18 +97,50 @@
   width: 100%;
   text-align: center;
 }
-.trailer-button-warpper{
+.trailer-button-warpper {
   display: flex;
   flex-direction: column;
   margin: 10px 0;
 }
-.trailer-button-img{
+.trailer-button-img {
   cursor: pointer;
   margin: 12px auto;
   outline: none;
   width: 90px;
 }
-.trailer-player{
- outline: none; 
- padding: 10px;
+.trailer-player {
+  outline: none;
+  padding: 10px;
 }
+
+@media screen and (max-width: 1200px) {
+  .movie-img-elements::after {
+    background-color: #ffd80e;
+    border-radius: 50%;
+    bottom: calc(75% - 80%);
+    content: "+";
+    cursor: pointer;
+    font-size: 30px;
+    padding: 6px 20px;
+    position: absolute;
+    right: calc(75% - 68%);
+  }
+}
+@media screen and (max-width:500px){
+  .movie-title{
+    font-size: 30px;
+  }
+  .movie-overview{
+    font-size: 15px;
+  }
+  .title-main-actors{
+    font-size: 20px;
+  }
+  .movie-vote-avg,
+.movie-release-date,
+.movie-release-year,
+.movie-status,
+.movie-languages{
+  font-size: 15px;
+}
+  

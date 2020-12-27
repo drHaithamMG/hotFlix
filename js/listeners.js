@@ -29,21 +29,20 @@ window.addEventListener("scroll", async () => {
     }
 });
 //burger-menu
-const navSlide = () =>{
-    const burger=document.querySelector('.burger');
-    const nav = document.querySelector('.nav');
-    burger.addEventListener("click", ()=>{
-        nav.classList.toggle('nav-active');
-        burger.classList.toggle('x-style')
-    })
-}
+
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav');
+burger.addEventListener("click", () => {
+    nav.classList.toggle('nav-active');
+    burger.classList.toggle('x-style')
+})
+
 //Search-mobile
-const searchMobile = () =>{
-    const searchMobileIcon=document.querySelector('.search-icon-mobile');
-    const search = document.querySelector('.search');
-    searchMobileIcon.addEventListener("click", ()=>{
-        search.classList.toggle('hide-search');
-        searchMobileIcon.classList.toggle('search-active')
-    })
-}
+
+const searchMobileIcon = document.querySelector('.search-icon-mobile');
+const search = document.querySelector('.search');
+searchMobileIcon.addEventListener("click", () => {
+    search.classList.toggle('hide-search');
+    searchMobileIcon.classList.toggle('search-active')
+});
 

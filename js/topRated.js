@@ -32,6 +32,7 @@ function parseData(data) {
  * @returns {void}
  */
 function drawTopRated() {
+    const path = window.location.pathname;
     const container = document.querySelector('.slider');
     let html = ``;
     const imgurl = 'https://image.tmdb.org/t/p/original/';
@@ -42,12 +43,12 @@ function drawTopRated() {
         <img src="${imgurl + movie.poster_path}" alt="${movie.title}" title="${movie.title}" class="movie-img">
         <span class="rate ${classVote}">${convertToFloat(movie.vote_average)}</span>
         <div class="overlay">
-            <a href="/pages/movie.html?id=${movie.id}" class="img-play-icon" title="${movie.title}">
+            <a href="${path.substring(0, path.lastIndexOf('/'))}/pages/movie.html?id=${movie.id}" class="img-play-icon" title="${movie.title}">
                 <i class="fa fa-play"></i>
             </a>
         </div>
         </div>
-        <a class="movie-name" href="/pages/movie.html?id=${movie.id}">${movie.title}</a>
+        <a class="movie-name" href="${path.substring(0, path.lastIndexOf('/'))}/pages/movie.html?id=${movie.id}">${movie.title}</a>
         <span class="date">${movie.release_date}</span>
       </div>`
         container.innerHTML += html;
@@ -59,7 +60,7 @@ function drawTopRated() {
         slidesToShow: 5,
         responsive: [
             {
-                breakpoint: 1200,
+                breakpoint: 1189,
                 settings: {
                     slidesToShow: 4,
                     slidesToScroll: 1,
@@ -67,20 +68,20 @@ function drawTopRated() {
                 }
             },
             {
-                breakpoint: 950,
+                breakpoint: 923,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1
                 }
             }, {
-                breakpoint: 660,
+                breakpoint: 700,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1
                 }
             },
             {
-                breakpoint: 500,
+                breakpoint: 475,
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1

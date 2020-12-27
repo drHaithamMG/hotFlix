@@ -108,7 +108,6 @@ function drawMovieDetails(data) {
     <div class = 'trailer-button-warpper'>
     <img class= 'trailer-button-img ' src="../assets/video-play-png-icon-.png" alt="play"> 
     <span class = 'trailer-button-text' >${movieTitle}'s trailer</span>
-    <div class="trailer-section"></div>
     </div>
     <span class="movie-overview">${overView}</span>
     <div class="movie-genres-holder"></div>
@@ -138,17 +137,20 @@ function fetchMovieTrailer(id) {
         .then(data => showTrailer(data.results))
 }
 /**
- * Show the trailer on the html site
+ * Show the trailer on the html page
  * @param {Object} movieTrailerInformation 
  * @returns {void}
  */
 function showTrailer(array) {
     const movieTrailerKey = array[0].key;
     const movieTrailerPlayer = document.querySelector('.trailer-button-warpper');
-    movieTrailerPlayer.innerHTML = `
-    <iframe width="1280" height="720" src="https://www.youtube.com/embed/${movieTrailerKey}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    movieTrailerPlayer.innerHTML += `
+    <div class = 'trailer-warpper'>
+    <iframe class="trailer-body" src="https://www.youtube.com/embed/${movieTrailerKey}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
     `;
 }
+
 /**
  * Fetch stars of the movie
  * @param {number} moive_id 
@@ -344,6 +346,11 @@ searchMobileIcon.addEventListener("click", () => {
     search.classList.toggle('hide-search');
     searchMobileIcon.classList.toggle('search-active')
 });
-
+const backToTop = document.querySelector('.swip-up');
+backToTop.addEventListener('click', () => {
+    console.log('Clicked');
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+})
 
 

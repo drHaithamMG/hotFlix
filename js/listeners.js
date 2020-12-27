@@ -45,4 +45,13 @@ searchMobileIcon.addEventListener("click", () => {
     search.classList.toggle('hide-search');
     searchMobileIcon.classList.toggle('search-active')
 });
+const backToTop = document.querySelector('.swip-up');
+backToTop.addEventListener('click', () => {
+    console.log('Clicked');
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+})
+
+
+
 

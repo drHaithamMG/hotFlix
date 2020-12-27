@@ -108,9 +108,29 @@
   outline: none;
   width: 90px;
 }
-.trailer-player {
-  outline: none;
-  padding: 10px;
+
+.trailer-warpper{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color:#1a191f;
+  z-index: 125;
+
+  }
+.trailer-body{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 50%;
+  height: 50%;
+  z-index: 125;
 }
 
 @media screen and (max-width: 1200px) {
@@ -143,4 +163,4 @@
 .movie-languages{
   font-size: 15px;
 }
-  
+}

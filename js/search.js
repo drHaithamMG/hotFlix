@@ -67,6 +67,7 @@ function drawMovies() {
         `
     const container = document.querySelector('.contant-warpper');
     let html = ``;
+    const path = window.location.pathname;
     const imgurl = 'https://image.tmdb.org/t/p/original/';
     searchMovies.forEach(movie => {
         const classVote = checkVote(movie.vote_average);
@@ -75,12 +76,12 @@ function drawMovies() {
         <img src="${imgurl + movie.poster_path}" alt="${movie.title}" title="${movie.title}" class="movie-img">
         <span class="rate ${classVote}">${convertToFloat(movie.vote_average)}</span>
         <div class="overlay">
-            <a href="/pages/movie.html?id=${movie.id}" class="img-play-icon" title="${movie.title}">
+            <a href="${path.substring(0, path.lastIndexOf('/'))}/movie.html?id=${movie.id}" class="img-play-icon" title="${movie.title}">
                 <i class="fa fa-play"></i>
             </a>
         </div>
         </div>
-        <a class="movie-name" href="/pages/movie.html?id=${movie.id}">${movie.title}</a>
+        <a class="movie-name" href="${path.substring(0, path.lastIndexOf('/'))}/movie.html?id=${movie.id}">${movie.title}</a>
         <span class="date">${movie.release_date}</span>
       </div>`
         container.innerHTML += html;
@@ -110,7 +111,7 @@ function showError(error) {
 function checkVote(averageVote) {
     return (averageVote > 7) ? 'rate-high' : 'rate-low';
 }
-const fetchIData = async() => {
+const fetchIData = async () => {
     isFetching = true;
     popularMovies = [];
     currentPage = currentPage + 1;
@@ -129,7 +130,7 @@ function getDocHeight() {
     let D = document;
     return Math.max(D.body.scrollHeight, D.documentElement.scrollHeight, D.body.offsetHeight, D.documentElement.offsetHeight, D.body.clientHeight, D.documentElement.clientHeight)
 }
-window.addEventListener("scroll", async() => {
+window.addEventListener("scroll", async () => {
     // Do not run if currently fetching
     if (isFetching) return;
     let winheight = window.innerHeight || (document.documentElement || document.body).clientHeight
@@ -150,29 +151,26 @@ searchButton.addEventListener('click', () => {
     else
         alert("Search field is empty!\nKindly enter something")
 })
-searchInput.addEventListener("keypress", function(event) {
+searchInput.addEventListener("keypress", function (event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         searchButton.click();
     }
 });
 //burger-menu
-const navSlide = () =>{
-    const burger=document.querySelector('.burger');
-    const nav = document.querySelector('.nav');
-    burger.addEventListener("click", ()=>{
-        nav.classList.toggle('nav-active');
-        burger.classList.toggle('x-style')
-    })
-}
+
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav');
+burger.addEventListener("click", () => {
+    nav.classList.toggle('nav-active');
+    burger.classList.toggle('x-style')
+})
+
 //Search-mobile
-const searchMobile = () =>{
-    const searchMobileIcon=document.querySelector('.search-icon-mobile');
-    const search = document.querySelector('.search');
-    searchMobileIcon.addEventListener("click", ()=>{
-        search.classList.toggle('hide-search');
-        searchMobileIcon.classList.toggle('search-active')
-    })
-}
-navSlide();
-searchMobile();
+
+const searchMobileIcon = document.querySelector('.search-icon-mobile');
+const search = document.querySelector('.search');
+searchMobileIcon.addEventListener("click", () => {
+    search.classList.toggle('hide-search');
+    searchMobileIcon.classList.toggle('search-active')
+});

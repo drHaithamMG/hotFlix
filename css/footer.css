@@ -3,11 +3,6 @@
 .footer {
     background-color: #1a191f;
     border-top: 1px solid #2d2b36;
-    /* position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin-bottom: 0px; */
 }
 
 .warpper-footer {
@@ -18,7 +13,6 @@
 
 .left-section-footer {
     display: flex;
-    justify-content: space-evenly;
 }
 
 .spans {
@@ -61,3 +55,29 @@
 .left-section-footer a {
     align-self: center;
 }
+
+@media screen and (max-width: 1200px) {
+    .warpper-footer {
+      position: relative;
+      flex-direction: column;
+    }
+    .left-section-footer {
+      width: 100%;
+    }
+    .spans {
+      position: absolute;
+      bottom: 0px;
+    }
+    .swip-up {
+      position: absolute;
+      bottom: 0px;
+      right:0;
+    }
+    .footer-nav li{
+      display: flex;
+    }
+    .right-section-footer {
+      width: 100%;
+    }
+  }
+  

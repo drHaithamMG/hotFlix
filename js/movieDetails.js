@@ -3,8 +3,6 @@ window.addEventListener('load', (event) => {
     const movieID = getParameterByName('id');
     fetchMovieDetails(movieID);
     getSimiler(movieID);
-    navSlide();
-searchMobile();
 });
 //Global variables
 let similerMovies = [];
@@ -88,7 +86,6 @@ function drawMovieDetails(data) {
     const movieId = data.id;
     const movieTitle = data.original_title;
     const releaseDate = data.release_date;
-    const releaseYear = data.release_date.split('-')[0];
     const overView = data.overview;
     const languages = data.spoken_languages;
     const genres = data.genres;
@@ -196,6 +193,7 @@ function getSimilerData(movieID) {
 function parseSimilerData(data) {
     if (data.results.length > 0) {
         addSliderSection();
+        const path = window.location.pathname;
         totalPagesNumberOfSimilerMovies = data.total_pages;
         data.results.map(movie => similerMovies.push(movie));
         const container = document.querySelector('.slider');
@@ -208,12 +206,12 @@ function parseSimilerData(data) {
             <img src="${imgurl + movie.poster_path}" alt="${movie.title}" title="${movie.title}" class="movie-img">
             <span class="rate ${classVote}">${convertToFloat(movie.vote_average)}</span>
             <div class="overlay">
-                <a href="/pages/movie.html?id=${movie.id}" class="img-play-icon" title="${movie.title}">
+                <a href="${path.substring(0, path.lastIndexOf('/'))}/movie.html?id=${movie.id}" class="img-play-icon" title="${movie.title}">
                     <i class="fa fa-play"></i>
                 </a>
             </div>
             </div>
-            <a class="movie-name" href="/pages/movie.html?id=${movie.id}">${movie.title}</a>
+            <a class="movie-name" href="${path.substring(0, path.lastIndexOf('/'))}/movie.html?id=${movie.id}">${movie.title}</a>
             <span class="date">${movie.release_date}</span>
           </div>`
             container.innerHTML += html;
@@ -329,30 +327,23 @@ searchInput.addEventListener("keypress", function (event) {
         searchButton.click();
     }
 });
-/**
- * add the functionallity for the burger button
- * @param {void} void
- * @returns {void}
- */
-const navSlide = () =>{
-    const burger=document.querySelector('.burger');
-    const nav = document.querySelector('.nav');
-    burger.addEventListener("click", ()=>{
-        nav.classList.toggle('nav-active');
-        burger.classList.toggle('x-style')
-    })
-}
-/**
- * add the functionallity for the search button
- * @param {void} void
- * @returns {void}
- */
-const searchMobile = () =>{
-    const searchMobileIcon=document.querySelector('.search-icon-mobile');
-    const search = document.querySelector('.search');
-    searchMobileIcon.addEventListener("click", ()=>{
-        search.classList.toggle('hide-search');
-        searchMobileIcon.classList.toggle('search-active')
-    })
-}
+//burger-menu
+
+const burger = document.querySelector('.burger');
+const nav = document.querySelector('.nav');
+burger.addEventListener("click", () => {
+    nav.classList.toggle('nav-active');
+    burger.classList.toggle('x-style')
+})
+
+//Search-mobile
+
+const searchMobileIcon = document.querySelector('.search-icon-mobile');
+const search = document.querySelector('.search');
+searchMobileIcon.addEventListener("click", () => {
+    search.classList.toggle('hide-search');
+    searchMobileIcon.classList.toggle('search-active')
+});
+
+
 

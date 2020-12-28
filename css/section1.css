@@ -56,9 +56,9 @@
   display: flex;
   flex-direction: column;
   outline: none;
-  padding: 10px 0;
+  padding: 10px 12px;
   position: relative;
-  width:20%;
+  width: calc(20% - 24px);
 }
 
 .img-play-icon {
@@ -91,7 +91,6 @@
 .movie-img-container {
   display: flex;
   height: 100%;
-  margin: 0 20px 0 0px;
 }
 
 .movie-img-container:hover .overlay {
@@ -103,7 +102,6 @@
   padding: 15px 0;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 224px;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -153,13 +151,20 @@
         margin: 0;
     }
 }
-@media screen and (max-width:1189){
+
+@media screen and (max-width:1200px){
   .movie-card {
-    display: flex;
-    flex-direction: column;
-    outline: none;
-    padding: 10px 0;
-    position: relative;
-    width:50%;
+    width: calc(25% - 24px);
   }
 }
+@media screen and (max-width:922px){
+  .movie-card {
+    width: calc(33% - 24px);
+  }
+}
+@media screen and (max-width:707px){
+  .movie-card {
+    width: calc(50% - 24px);
+  }
+}
+

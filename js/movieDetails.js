@@ -123,11 +123,11 @@ function drawMovieDetails(data) {
     movieElementDetails.innerHTML += movieDetails;
     getStars(data.id);
     const trailerButtonListener = document.querySelector('.trailer-button-img ');
-    trailerButtonListener.addEventListener('click', () => fetchMovieTrailer(movieId))
+    fetchMovieTrailer(movieId)
 }
 /**
  * Fetch the movie trailer by it id
- * @param {number} movieid 
+ * @param {number} movieID 
  * @returns {void}
  */
 function fetchMovieTrailer(id) {
@@ -222,7 +222,7 @@ function parseSimilerData(data) {
         $(container).slick({
             infinite: false,
             arrows: false,
-            slidesToScroll: 5,
+            slidesToScroll: 1,
             slidesToShow: 5,
             responsive: [
                 {
@@ -234,26 +234,21 @@ function parseSimilerData(data) {
                     }
                 },
                 {
-                    breakpoint: 950,
+                    breakpoint: 922,
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 1
                     }
                 }, {
-                    breakpoint: 660,
+                    breakpoint: 707,
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 1
                     }
                 },
-                {
-                    breakpoint: 500,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
+                
             ]
+    
         });
     }
 

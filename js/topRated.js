@@ -68,7 +68,7 @@ function drawTopRated() {
                 }
             },
             {
-                breakpoint: 923,
+                breakpoint: 922,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1
@@ -80,13 +80,7 @@ function drawTopRated() {
                     slidesToScroll: 1
                 }
             },
-            {
-                breakpoint: 472,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
+            
         ]
 
     });

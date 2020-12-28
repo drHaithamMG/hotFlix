@@ -34,50 +34,11 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin: 0 -12px;
 }
 @media screen and (max-width:1200px){
   .not-active-nav {
     display: none;
   }
 
-}
-@media screen and (max-width:1199px){
-  .movie-card {
-    display: flex;
-    flex-direction: column;
-    outline: none;
-    padding: 10px 0;
-    position: relative;
-    width:25%;
-  }
-}
-@media screen and (max-width:923px){
-  .movie-card {
-    display: flex;
-    flex-direction: column;
-    outline: none;
-    padding: 10px 0;
-    position: relative;
-    width:33%;
-  }
-}
-@media screen and (max-width:708px){
-  .movie-card {
-    display: flex;
-    flex-direction: column;
-    outline: none;
-    padding: 10px 0;
-    position: relative;
-    width:50%;
-  }
-}
-@media screen and (max-width:471px){
-  .movie-card {
-    display: flex;
-    flex-direction: column;
-    outline: none;
-    padding: 10px 0;
-    position: relative;
-    width:100%;
-  }
 }

@@ -143,12 +143,13 @@ function fetchMovieTrailer(id) {
  */
 function showTrailer(array) {
     const movieTrailerKey = array[0].key;
-    const movieTrailerPlayer = document.querySelector('.trailer-button-warpper');
-    movieTrailerPlayer.innerHTML += `
-    <div class = 'trailer-warpper'>
-    <iframe class="trailer-body" src="https://www.youtube.com/embed/${movieTrailerKey}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    `;
+    const movieTrailerPlayer = document.querySelector('.trailer-button-img ');
+    $(movieTrailerPlayer).click(() => {
+        swal.fire({
+            html: `<iframe class="trailer-body" src="https://www.youtube.com/embed/${movieTrailerKey}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
+            showConfirmButton: false,
+        });
+    });
 }
 
 /**

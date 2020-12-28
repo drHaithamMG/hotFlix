@@ -36,7 +36,7 @@
 .buttons {
   display: flex;
   justify-content: center;
-  margin: 50px 0 auto;
+  margin: 50px 0  0 ;
 }
 
 .buttons button {
@@ -58,6 +58,7 @@
   outline: none;
   padding: 10px 0;
   position: relative;
+  width:20%;
 }
 
 .img-play-icon {
@@ -90,6 +91,7 @@
 .movie-img-container {
   display: flex;
   height: 100%;
+  margin: 0 20px 0 0px;
 }
 
 .movie-img-container:hover .overlay {
@@ -133,10 +135,8 @@
 }
 
 .movie-img {
-  display: block;
-  height: 332px;
   object-fit: cover;
-  width: 224px;
+  width: 100%;
 }
 
 .slider {
@@ -152,4 +152,14 @@
     .sec1{
         margin: 0;
     }
+}
+@media screen and (max-width:1189){
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    outline: none;
+    padding: 10px 0;
+    position: relative;
+    width:50%;
+  }
 }

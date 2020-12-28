@@ -1,10 +1,10 @@
 .header {
-  width: 100%;
+  background-color: #1a191f;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: fixed;
   top: 0;
-  background-color: #1a191f;
+  width: 100%;
   z-index: 1;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .header-warpper {
   display: flex;
@@ -52,10 +52,10 @@
 .search {
   background-color: #212028;
   border-radius: 5px;
+  border: 1px solid #212028;
   color: #a6a6a9;
   display: flex;
   justify-content: center;
-  border: 1px solid #212028;
 }
 
 .search:focus-within {
@@ -131,16 +131,16 @@
   .nav {
     background-color: #1a191f;
     flex-direction: column;
-    justify-content: unset;
     height: 954px;
+    justify-content: unset;
     overflow: auto;
     padding: 0;
     position: absolute;
     right: -16px;
     top: 65px;
-    width: 75%;
     transform: translateX(100%);
     transition: transform 0.3s ease-in;
+    width: 75%;
   }
   .nav li {
     margin: 20px;
@@ -163,40 +163,40 @@
     transform: translateX(0%);
   }
   .mobile-icons {
+    align-items: center;
+    color: #a6a6a9;
     display: flex;
+    font-size: 18px;
     justify-content: space-between;
     width: 120px;
-    align-items: center;
-    font-size: 18px;
-    color: #a6a6a9;
   }
   .search {
-    position: fixed;
-    top: -50px;
     left: 0;
+    position: fixed;
     right: 0;
-    width: 100%;
+    top: -50px;
     transition: transform 0.3s ease-in;
+    width: 100%;
   }
   .hide-search {
     top: 65px;
   }
   .search input {
-    width: calc(100% - 20px);
     min-width: 200px;
+    width: calc(100% - 20px);
   }
   .burger div {
-    width: 25px;
-    height: 3px;
     background-color: #a6a6a9;
-    margin: 5px;
     cursor: pointer;
+    height: 3px;
+    margin: 5px;
+    width: 25px;
   }
   .signup-mobile {
-    border: 1px solid #ffd80e;
-    padding: 10px;
     border-radius: 5px;
+    border: 1px solid #ffd80e;
     outline: none;
+    padding: 10px;
   }
   .search-icon-mobile:hover {
     color: #ffd80e;

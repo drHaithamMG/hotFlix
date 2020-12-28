@@ -23,7 +23,8 @@
   margin-left: 40px;
 }
 .right-section-footer {
-width: 30%;}
+  width: 30%;
+}
 
 .spans span {
   font-size: 12px;
@@ -57,27 +58,27 @@ width: 30%;}
 
 @media screen and (max-width: 1200px) {
   .warpper-footer {
-    position: relative;
     flex-direction: column;
+    position: relative;
   }
-  .footer-nav{
+  .footer-nav {
     justify-content: left;
   }
   .spans {
-    position: absolute;
     bottom: 0px;
     margin-left: 0;
-
+    position: absolute;
   }
   .swip-up {
-    position: absolute;
     bottom: 0px;
-    right:0;
+    position: absolute;
+    right: 0;
   }
-  .footer-nav li{
+  .footer-nav li {
     display: flex;
     margin: 0 30px 15px 0;
-  }.right-section-footer {
-    width: auto}
-  
+  }
+  .right-section-footer {
+    width: auto;
+  }
 }

@@ -1,15 +1,15 @@
 .search-warpper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .search-title {
-    margin: 40px 0;
-    font-size: 42px;
-    font-weight: 300;
+  font-size: 42px;
+  font-weight: 300;
+  margin: 40px 0;
 }
 
 .search-failer {
-    padding: 0 0 20px 0;
-    font-size: 24px;
+  font-size: 24px;
+  padding: 0 0 20px 0;
 }

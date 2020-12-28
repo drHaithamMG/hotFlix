@@ -74,9 +74,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const imgurl = 'https://image.tmdb.org/t/p/original/';
         searchMovies.forEach(movie => {
             const classVote = checkVote(movie.vote_average);
+            let moviePoster = movie.poster_path;
+        const error = `../assets/error-404-message.png`;
             html = `  <div class="movie-card">
         <div class="movie-img-container">
-        <img src="${imgurl + movie.poster_path}" alt="${movie.title}" title="${movie.title}" class="movie-img">
+        <img src="${moviePoster}" alt="${movie.title}" title="${movie.title}" class="movie-img">
         <span class="rate ${classVote}">${convertToFloat(movie.vote_average)}</span>
         <div class="overlay">
             <a href="${path.substring(0, path.lastIndexOf('/'))}/movie.html?id=${movie.id}" class="img-play-icon" title="${movie.title}">

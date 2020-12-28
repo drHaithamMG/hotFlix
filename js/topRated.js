@@ -39,7 +39,7 @@ function drawTopRated() {
     topRatedMovies.forEach(movie => {
         const classVote = checkVote(movie.vote_average);
         let moviePoster = movie.poster_path;
-        const error = `../assets/error-404-message.png`;
+        const error = `assets/error-404-message.png`;
         if (movie.poster_path == null) moviePoster = error;
         else moviePoster = imgurl + moviePoster;
         html = `  <div class="movie-card">

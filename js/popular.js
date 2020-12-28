@@ -14,7 +14,7 @@ function popular() {
  * @param {void}void
  * @returns {void} void
  */
-const fetchIData = async() => {
+const fetchIData = async () => {
     isFetching = true;
     popularMovies = [];
     currentPage = currentPage + 1;
@@ -49,9 +49,13 @@ function drawPopular() {
     const imgurl = 'https://image.tmdb.org/t/p/original/';
     popularMovies.forEach(movie => {
         const classVote = checkVote(movie.vote_average);
+        let moviePoster = movie.poster_path;
+        const error = `../assets/error-404-message.png`;
+        if (movie.poster_path == null) moviePoster = error;
+        else moviePoster = imgurl + moviePoster;
         html = `  <div class="movie-card">
         <div class="movie-img-container">
-        <img src="${imgurl + movie.poster_path}" alt="${movie.title}" title="${movie.title}" class="movie-img">
+        <img src="${moviePoster}" alt="${movie.title}" title="${movie.title}" class="movie-img">
         <span class="rate ${classVote}">${convertToFloat(movie.vote_average)}</span>
         <div class="overlay">
             <a href="${path.substring(0, path.lastIndexOf('/'))}/pages/movie.html?id=${movie.id}" class="img-play-icon" title="${movie.title}">
@@ -99,7 +103,7 @@ searchButton.addEventListener('click', () => {
     else
         alert("Search bar is empty!\nKindly put something in it.")
 })
-searchInput.addEventListener("keypress", function(event) {
+searchInput.addEventListener("keypress", function (event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         searchButton.click();

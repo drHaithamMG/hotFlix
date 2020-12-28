@@ -6,9 +6,9 @@ body {
   background-color: #1a191f;
   color: #fff;
   font-family: "Source Sans Pro", sans-serif;
+  height: calc(100% - 80px);
   margin: 0;
   padding: 0;
-  height: calc(100% - 80px);
 }
 
 .container {
@@ -18,24 +18,22 @@ body {
 
 main {
   margin-top: 80px;
-  position: relative;
   min-height: calc(100% - 80px);
+  position: relative;
 }
 @media screen and (max-width: 1200px) {
   .body {
     overflow-x: hidden;
   }
   main {
-    width: 100%;
-    margin-top: 70px;
     display: flex;
     flex-direction: column;
-}
+    margin-top: 70px;
+    width: 100%;
+  }
   .container {
-    position: relative;
     padding: 0 15px;
+    position: relative;
     width: calc(100% - 30px);
   }
-  
-  
 }
